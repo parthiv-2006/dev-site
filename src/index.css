@@ -29,6 +29,31 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  padding: 10px 14px;
+  background: #0f141c;
+  color: #f7f8fb;
+  border-radius: 12px;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+  z-index: 999;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 p {
   margin: 0;
   line-height: 1.7;

@@ -23,6 +23,12 @@
   z-index: 10;
 }
 
+.nav__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .nav__brand {
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -48,6 +54,16 @@
   color: var(--text);
   background: rgba(15, 20, 28, 0.06);
   outline: none;
+}
+
+.badge-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15, 20, 28, 0.08);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid rgba(15, 20, 28, 0.1);
 }
 
 .hero {
@@ -211,6 +227,35 @@
 .button:focus-visible {
   transform: translateY(-2px);
   outline: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: rise-in 0.6s ease forwards;
+}
+
+.reveal--delay {
+  animation-delay: 0.12s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .list {

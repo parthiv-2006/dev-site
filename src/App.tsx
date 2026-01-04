@@ -8,8 +8,15 @@ import './styles/app.css';
 function App() {
   return (
     <div className="page">
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+
       <nav className="nav" aria-label="Primary">
-        <div className="nav__brand">Your Name — Developer</div>
+        <div className="nav__left">
+          <div className="nav__brand">Your Name — Developer</div>
+          <span className="badge-pill">Available for select work</span>
+        </div>
         <div className="nav__links">
           <a className="nav__link" href="#projects">
             Work
@@ -23,11 +30,13 @@ function App() {
         </div>
       </nav>
 
-      <Hero />
-      <About />
-      <Projects />
-      <Process />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Projects />
+        <Process />
+        <Contact />
+      </main>
 
       <footer className="footer">
         <span>Portfolio concept · Dummy data</span>
