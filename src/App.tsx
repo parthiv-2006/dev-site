@@ -6,6 +6,7 @@ import Projects from './sections/Projects';
 import Process from './sections/Process';
 import Contact from './sections/Contact';
 import './styles/app.css';
+import './styles/stat-counter.css';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);

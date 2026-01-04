@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap');
 @import './styles/tokens.css';
+@import './styles/app.css';
+@import './styles/stat-counter.css';
 
 :root {
   color-scheme: dark;

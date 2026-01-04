@@ -1,0 +1,31 @@
+.stat-counter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-counter__value {
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: var(--font-weight-heavy);
+  background: linear-gradient(120deg, var(--accent-copper), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
+.stat-counter__label {
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stat-counter__note {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  line-height: 1.4;
+}
