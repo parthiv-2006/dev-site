@@ -1,5 +1,4 @@
 import ActionButton from '../components/ActionButton';
-import Tag from '../components/Tag';
 import StatCounter from '../components/StatCounter';
 import { hero } from '../content/data';
 

@@ -1,0 +1,122 @@
+.process-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.process-diagram__svg {
+  width: 100%;
+  height: auto;
+  min-height: 180px;
+}
+
+.process-diagram__line {
+  stroke: var(--glass-medium);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+}
+
+.process-diagram__line--draw {
+  animation: draw-line var(--motion-slow) var(--easing-out) forwards;
+}
+
+.process-diagram__line--draw:nth-of-type(2) {
+  animation-delay: var(--draw-delay, 0s);
+}
+
+.process-diagram__node {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.process-diagram__node--reveal {
+  animation: node-appear var(--motion-base) var(--easing-out-elastic) forwards;
+  animation-delay: var(--node-delay, 0s);
+}
+
+.process-diagram__node-circle {
+  fill: var(--glass-light);
+  stroke: var(--accent-cyan);
+  stroke-width: 2;
+  transition: fill var(--motion-base) var(--easing-out);
+}
+
+.process-diagram__node:hover .process-diagram__node-circle {
+  fill: var(--glass-medium);
+  stroke: var(--accent-copper);
+}
+
+.process-diagram__node-text {
+  fill: var(--text-primary);
+  font-weight: var(--font-weight-heavy);
+  font-size: 16px;
+  font-family: var(--font-sans);
+}
+
+.process-diagram__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--grid-gap);
+}
+
+.process-diagram__step {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.process-diagram__step--reveal {
+  animation: rise-in var(--motion-base) var(--easing-out) forwards;
+  animation-delay: var(--step-delay, 0s);
+}
+
+.process-diagram__step-title {
+  font-size: 1.05rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.process-diagram__step-detail {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes node-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-diagram__line {
+    animation: none;
+    stroke-dasharray: none;
+  }
+
+  .process-diagram__node {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .process-diagram__step {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}

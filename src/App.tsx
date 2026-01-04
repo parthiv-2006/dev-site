@@ -5,6 +5,8 @@ import About from './sections/About';
 import Projects from './sections/Projects';
 import Process from './sections/Process';
 import Contact from './sections/Contact';
+import useMagnetCursor from './hooks/useMagnetCursor';
+import useScrollStagger from './hooks/useScrollStagger';
 import './styles/app.css';
 import './styles/stat-counter.css';
 
@@ -13,6 +15,10 @@ function App() {
 
   const closeMenu = () => setMenuOpen(false);
   const isNarrow = typeof window !== 'undefined' && window.matchMedia('(max-width: 720px)').matches;
+
+  // Initialize interaction hooks
+  useMagnetCursor({ selector: '.button, .nav__link, .project-card__link', distance: 100 });
+  useScrollStagger();
 
   return (
     <div className="page">
