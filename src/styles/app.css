@@ -9,7 +9,7 @@
 
 .nav {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   gap: 16px;
   padding: 12px 18px;
@@ -21,6 +21,13 @@
   top: 16px;
   backdrop-filter: blur(14px);
   z-index: 10;
+}
+
+.nav__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .nav__left {
@@ -41,6 +48,10 @@
   flex-wrap: wrap;
 }
 
+.nav__links a {
+  display: inline-flex;
+}
+
 .nav__link {
   padding: 8px 12px;
   border-radius: var(--radius-sm);
@@ -54,6 +65,18 @@
   color: var(--text);
   background: rgba(15, 20, 28, 0.06);
   outline: none;
+}
+
+.nav__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(15, 20, 28, 0.1);
+  background: rgba(15, 20, 28, 0.06);
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .badge-pill {
@@ -296,8 +319,48 @@
     position: static;
   }
 
+  .nav__top {
+    width: 100%;
+  }
+
+  .nav__left {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav__links {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    transition: max-height 0.25s ease, opacity 0.2s ease, padding-top 0.2s ease;
+  }
+
+  .nav__links--open {
+    max-height: 300px;
+    opacity: 1;
+    padding-top: 6px;
+  }
+
+  .nav__link {
+    width: 100%;
+  }
+
+  .nav__toggle {
+    display: inline-flex;
+  }
+
   .footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__links {
+    transition: none;
   }
 }
