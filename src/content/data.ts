@@ -4,6 +4,8 @@ export type Project = {
   impact: string;
   tech: string[];
   link?: string;
+  imageUrl?: string;
+  videoUrl?: string;
 };
 
 export type ProcessStep = {
@@ -39,6 +41,8 @@ export const projects: Project[] = [
     impact: 'Cut mean-time-to-detect by 19% via clearer alert groupings and fast drilldowns.',
     tech: ['React', 'TypeScript', 'WebSockets', 'Vite'],
     link: '#',
+    imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"%3E%3Crect fill="%231a2332" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="%23d97706" text-anchor="middle" dominant-baseline="middle"%3ESignalboard Demo%3C/text%3E%3C/svg%3E',
+    videoUrl: undefined,
   },
   {
     title: 'Atlas Docs',
@@ -46,6 +50,8 @@ export const projects: Project[] = [
     impact: 'Increased task completion by 27% for new developers in usability studies.',
     tech: ['MDX', 'Next.js', 'Search'],
     link: '#',
+    imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"%3E%3Crect fill="%231a2332" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="%2306b6d4" text-anchor="middle" dominant-baseline="middle"%3EAtlas Docs Demo%3C/text%3E%3C/svg%3E',
+    videoUrl: undefined,
   },
   {
     title: 'Cirrus Design Kit',
@@ -53,7 +59,10 @@ export const projects: Project[] = [
     impact: 'Reduced net-new component requests by 42% and improved UI consistency.',
     tech: ['Tokens', 'Storybook', 'Theming'],
     link: '#',
+    imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"%3E%3Crect fill="%231a2332" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="%23f59e0b" text-anchor="middle" dominant-baseline="middle"%3ECircus Design Kit Demo%3C/text%3E%3C/svg%3E',
+    videoUrl: undefined,
   },
+  
 ];
 
 export const process: ProcessStep[] = [

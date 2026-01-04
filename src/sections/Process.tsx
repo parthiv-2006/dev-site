@@ -1,4 +1,5 @@
 import Section from '../components/Section';
+import ProcessDiagram from '../components/ProcessDiagram';
 import { process } from '../content/data';
 
 function Process() {
@@ -10,16 +11,7 @@ function Process() {
       description="A simple flow to keep momentum without losing clarity."
       className="reveal reveal--delay"
     >
-      <div className="section__grid section__grid--two">
-        {process.map((step) => (
-          <article key={step.title} className="card card--soft">
-            <div className="card__title" style={{ color: 'var(--text)' }}>
-              {step.title}
-            </div>
-            <p>{step.detail}</p>
-          </article>
-        ))}
-      </div>
+      <ProcessDiagram steps={process} />
     </Section>
   );
 }
