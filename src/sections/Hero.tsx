@@ -4,7 +4,7 @@ import { hero } from '../content/data';
 
 function Hero() {
   return (
-    <header className="hero" id="top">
+    <header className="hero reveal" id="top">
       <div>
         <span className="hero__badge">{hero.badge}</span>
         <h1 className="hero__title">{hero.title}</h1>

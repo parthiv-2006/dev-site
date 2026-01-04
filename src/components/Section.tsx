@@ -6,11 +6,13 @@ export type SectionProps = {
   title: string;
   description?: string;
   children: ReactNode;
+  className?: string;
 };
 
-function Section({ id, eyebrow, title, description, children }: SectionProps) {
+function Section({ id, eyebrow, title, description, children, className }: SectionProps) {
+  const sectionClass = className ? `section ${className}` : 'section';
   return (
-    <section id={id} className="section">
+    <section id={id} className={sectionClass}>
       <div>
         {eyebrow ? <div className="section__eyebrow">{eyebrow}</div> : null}
         <h2 className="section__title">{title}</h2>

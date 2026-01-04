@@ -9,6 +9,7 @@ function Projects() {
       eyebrow="Selected work"
       title="Projects with crisp outcomes"
       description="Each project pairs a short narrative with measurable impact so recruiters can see the through-line."
+      className="reveal"
     >
       <div className="section__grid section__grid--two">
         {projects.map((project) => (

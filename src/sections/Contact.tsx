@@ -4,7 +4,7 @@ import { contact } from '../content/data';
 
 function Contact() {
   return (
-    <Section id="contact" eyebrow="Contact" title="Let’s talk shop">
+    <Section id="contact" eyebrow="Contact" title="Let’s talk shop" className="reveal">
       <div className="section__grid">
         <p>{contact.note}</p>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>

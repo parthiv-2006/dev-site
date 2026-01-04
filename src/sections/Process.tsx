@@ -8,6 +8,7 @@ function Process() {
       eyebrow="How I work"
       title="Intentional, fast, iterative"
       description="A simple flow to keep momentum without losing clarity."
+      className="reveal reveal--delay"
     >
       <div className="section__grid section__grid--two">
         {process.map((step) => (
