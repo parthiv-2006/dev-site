@@ -1,20 +1,62 @@
 :root {
-  --bg: #f4f1ea;
-  --bg-muted: #e9e2d7;
-  --surface: #0f141c;
-  --surface-2: #16202c;
-  --accent: #ff6f3c;
-  --accent-strong: #ff8c61;
-  --text: #0b0d10;
-  --text-muted: #1f2933;
-  --card: rgba(15, 20, 28, 0.9);
-  --shadow-soft: 0 18px 50px rgba(10, 15, 25, 0.12);
-  --shadow-strong: 0 30px 80px rgba(10, 15, 25, 0.18);
+  /* Dark Mode Palette */
+  --bg-dark: #0a0e14;
+  --bg-darker: #050709;
+  --surface-dark: #0f141c;
+  --surface-darker: #161d2a;
+  --surface-light: #1a2332;
+  --glass-light: rgba(255, 255, 255, 0.05);
+  --glass-medium: rgba(255, 255, 255, 0.08);
+  --glass-strong: rgba(255, 255, 255, 0.12);
+
+  /* Accent Duo: Copper + Cyan */
+  --accent-copper: #d97706;
+  --accent-copper-light: #f59e0b;
+  --accent-cyan: #06b6d4;
+  --accent-cyan-light: #22d3ee;
+
+  /* Text & Semantic */
+  --text-primary: #f5f7fa;
+  --text-secondary: #a0aabf;
+  --text-tertiary: #6b7684;
+
+  /* Shadows (Dark theme depth) */
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.24);
+  --shadow-medium: 0 16px 48px rgba(0, 0, 0, 0.32);
+  --shadow-strong: 0 28px 80px rgba(0, 0, 0, 0.48);
+  --shadow-glow-copper: 0 0 24px rgba(217, 119, 6, 0.24);
+  --shadow-glow-cyan: 0 0 24px rgba(6, 182, 212, 0.24);
+
+  /* Spacing & Layout */
   --radius-lg: 18px;
   --radius-md: 12px;
   --radius-sm: 8px;
   --max-width: 1180px;
   --grid-gap: clamp(16px, 2vw, 24px);
+
+  /* Typography: Variable Font Support */
   --font-sans: 'Sora', 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-sans-variable: 'Sora', 'Space Grotesk', system-ui;
   --font-mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  --font-weight-light: 400;
+  --font-weight-regular: 500;
+  --font-weight-bold: 600;
+  --font-weight-heavy: 700;
+
+  /* Motion & Timing: Smooth, Intentional */
+  --motion-fast: 0.15s;
+  --motion-base: 0.25s;
+  --motion-slow: 0.4s;
+  --easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-out: cubic-bezier(0.0, 0, 0.2, 1);
+  --easing-out-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --easing-in-quad: cubic-bezier(0.11, 0, 0.5, 0);
+
+  /* Grain & Texture */
+  --grain-opacity: 0.015;
+  --grain-blur: 0.5px;
+
+  /* Deprecated (kept for reference, will phase out) */
+  --bg: var(--bg-dark);
+  --accent: var(--accent-copper);
 }

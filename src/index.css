@@ -2,7 +2,7 @@
 @import './styles/tokens.css';
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * {
@@ -12,12 +12,32 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at 10% 20%, rgba(255, 143, 97, 0.12), transparent 30%),
-    radial-gradient(circle at 80% 0%, rgba(97, 166, 255, 0.12), transparent 28%),
-    var(--bg);
-  color: var(--text);
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface-dark) 25%, var(--bg-darker) 100%);
+  color: var(--text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' result='noise' seed='2'/%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23000' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+main,
+nav,
+footer {
+  position: relative;
+  z-index: 2;
 }
 
 html {
@@ -32,7 +52,7 @@ a {
 a:focus-visible,
 button:focus-visible,
 [role='button']:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-cyan);
   outline-offset: 3px;
   border-radius: 10px;
 }
@@ -42,11 +62,13 @@ button:focus-visible,
   left: 12px;
   top: 12px;
   padding: 10px 14px;
-  background: #0f141c;
-  color: #f7f8fb;
+  background: var(--surface-dark);
+  color: var(--text-primary);
   border-radius: 12px;
+  border: 1px solid var(--glass-light);
+  backdrop-filter: blur(10px);
   transform: translateY(-150%);
-  transition: transform 0.2s ease;
+  transition: transform var(--motion-base) var(--easing-out);
   z-index: 999;
 }
 
@@ -57,7 +79,7 @@ button:focus-visible,
 p {
   margin: 0;
   line-height: 1.7;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 h1,
@@ -67,8 +89,9 @@ h4,
 h5,
 h6 {
   margin: 0;
-  color: var(--text);
+  color: var(--text-primary);
   letter-spacing: -0.01em;
+  font-weight: var(--font-weight-bold);
 }
 
 img {
