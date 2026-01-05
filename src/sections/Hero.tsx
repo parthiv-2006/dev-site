@@ -1,5 +1,6 @@
 import ActionButton from '../components/ActionButton';
 import StatCounter from '../components/StatCounter';
+import NowWidget from '../components/NowWidget';
 import { hero } from '../content/data';
 
 function Hero() {
@@ -21,6 +22,7 @@ function Hero() {
             <StatCounter value={stat.value} label={stat.label} note={stat.note} />
           </div>
         ))}
+        <NowWidget />
       </div>
     </header>
   );
