@@ -31,6 +31,7 @@ export const about = {
     'Design/dev bridge: comfortable in Figma, opinionated in React.',
     'Systems thinker: tokens, patterns, and guardrails to scale calmly.',
     'Delivery focused: bias for shipping small, learning fast, and polishing after.',
+    'Live design systems: try the interactive theme playground in the corner →',
   ],
 };
 
