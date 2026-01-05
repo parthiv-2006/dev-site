@@ -62,7 +62,7 @@
 
 .nav__link:hover,
 .nav__link:focus-visible {
-  color: var(--accent-cyan);
+  color: var(--theme-accent);
   background: var(--glass-light);
   outline: none;
 }
@@ -90,7 +90,7 @@
 .badge-pill {
   padding: 6px 10px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(217, 119, 6, 0.15), rgba(6, 182, 212, 0.1));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-accent) 15%, transparent), color-mix(in srgb, var(--theme-accent-light) 10%, transparent));
   color: var(--text-primary);
   font-weight: 600;
   font-size: 0.95rem;

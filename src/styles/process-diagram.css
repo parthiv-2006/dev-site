@@ -39,14 +39,14 @@
 
 .process-diagram__node-circle {
   fill: var(--glass-light);
-  stroke: var(--accent-cyan);
+  stroke: var(--theme-accent);
   stroke-width: 2;
   transition: fill var(--motion-base) var(--easing-out);
 }
 
 .process-diagram__node:hover .process-diagram__node-circle {
   fill: var(--glass-medium);
-  stroke: var(--accent-copper);
+  stroke: var(--theme-accent-light);
 }
 
 .process-diagram__node-text {

@@ -7,7 +7,7 @@
 .stat-counter__value {
   font-size: clamp(1.8rem, 3vw, 2.2rem);
   font-weight: var(--font-weight-heavy);
-  background: linear-gradient(120deg, var(--accent-copper), var(--accent-cyan));
+  background: linear-gradient(120deg, var(--theme-accent), var(--theme-accent-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

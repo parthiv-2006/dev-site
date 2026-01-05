@@ -1,7 +1,7 @@
 .project-card {
   position: relative;
   padding: 20px;
-  border-radius: var(--radius-md);
+  border-radius: var(--theme-radius);
   background: var(--glass-light);
   border: 1px solid var(--glass-medium);
   backdrop-filter: blur(10px);
@@ -34,7 +34,7 @@
 .project-card:hover,
 .project-card--hovered {
   border-color: var(--glass-strong);
-  box-shadow: var(--shadow-medium), var(--shadow-glow-cyan);
+  box-shadow: var(--shadow-medium), 0 0 24px color-mix(in srgb, var(--theme-accent) 24%, transparent);
 }
 
 .project-card__content {
@@ -79,10 +79,10 @@
 
 .project-card__tech-tag {
   padding: 4px 8px;
-  border-radius: 4px;
+  border-radius: var(--theme-radius);
   background: var(--glass-light);
   border: 1px solid var(--glass-medium);
-  color: var(--accent-cyan);
+  color: var(--theme-accent-light);
   font-size: 0.85rem;
   font-weight: 500;
   font-family: var(--font-mono);
@@ -92,7 +92,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--accent-copper);
+  color: var(--theme-accent);
   font-weight: 600;
   font-size: 0.9rem;
   margin-top: 4px;
