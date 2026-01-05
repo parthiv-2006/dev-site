@@ -5,6 +5,7 @@ import About from './sections/About';
 import Projects from './sections/Projects';
 import Process from './sections/Process';
 import Contact from './sections/Contact';
+import ThemePlayground from './components/ThemePlayground';
 import useMagnetCursor from './hooks/useMagnetCursor';
 import useScrollStagger from './hooks/useScrollStagger';
 import './styles/app.css';
@@ -73,6 +74,9 @@ function App() {
           Back to top ↑
         </a>
       </footer>
+
+      {/* Live Theme Playground */}
+      <ThemePlayground />
     </div>
   );
 }
