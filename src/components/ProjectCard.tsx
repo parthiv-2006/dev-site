@@ -62,12 +62,13 @@ function ProjectCard({ title, summary, impact, tech, link, imageUrl, videoUrl }:
 
       {(imageUrl || videoUrl) && (
         <div className="project-card__media">
-          {isHovered && videoUrl ? (
+          {videoUrl ? (
             <video
               src={videoUrl}
               autoPlay
               loop
               muted
+              playsInline
               className="project-card__video"
               aria-label={`${title} demo video`}
             />
