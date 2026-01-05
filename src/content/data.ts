@@ -13,6 +13,39 @@ export type ProcessStep = {
   detail: string;
 };
 
+export type NowActivity = {
+  github?: {
+    repo: string;
+    message: string;
+    timestamp: string;
+  };
+  spotify?: {
+    song: string;
+    artist: string;
+    isPlaying: boolean;
+  };
+  location: {
+    city: string;
+    timezone: string;
+    time: string;
+  };
+};
+
+export const now = {
+  github: {
+    enabled: true,
+    username: 'parthiv-2006', // Replace with your GitHub username
+  },
+  spotify: {
+    enabled: true,
+    // For demo: will show mock data. Connect real Spotify API for live updates
+  },
+  location: {
+    city: 'Toronto',
+    timezone: 'America/Toronto',
+  },
+};
+
 export const hero = {
   badge: 'Engineer + Story-first builder',
   title: 'Building lean, clear experiences for the web.',
