@@ -15,6 +15,12 @@
   --accent-cyan: #06b6d4;
   --accent-cyan-light: #22d3ee;
 
+  /* Playground Customizable Tokens */
+  --theme-accent: var(--accent-copper);
+  --theme-accent-light: var(--accent-copper-light);
+  --theme-radius: var(--radius-md);
+  --theme-font-size-base: 16px;
+
   /* Text & Semantic */
   --text-primary: #f5f7fa;
   --text-secondary: #a0aabf;
