@@ -73,19 +73,19 @@ export default function NowWidget() {
           </div>
         )}
 
-        {/* Spotify Activity */}
-        {activity?.spotify?.isPlaying && (
+        {/* Quote of the Day */}
+        {activity?.quote && (
           <div className="now-widget__item">
             <span className="now-widget__icon" aria-hidden="true">
-              🎵
+              ✍️
             </span>
             <div className="now-widget__content">
-              <div className="now-widget__label">Listening</div>
-              <div className="now-widget__value" title={`${activity.spotify.song} by ${activity.spotify.artist}`}>
-                {activity.spotify.song}
+              <div className="now-widget__label">Quote</div>
+              <div className="now-widget__value" title={activity.quote.text}>
+                {activity.quote.text}
+                {activity.quote.author ? ` — ${activity.quote.author}` : ''}
               </div>
             </div>
-            <span className="now-widget__pulse" aria-label="Live indicator"></span>
           </div>
         )}
 
@@ -105,7 +105,7 @@ export default function NowWidget() {
         )}
 
         {/* Fallback when no activity */}
-        {!activity?.github && !activity?.spotify?.isPlaying && (
+        {!activity?.github && !activity?.quote && (
           <div className="now-widget__item now-widget__item--muted">
             <span className="now-widget__icon" aria-hidden="true">
               ✨

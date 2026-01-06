@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { now, type NowActivity } from '../content/data';
+import { now, quotes, type NowActivity } from '../content/data';
 
 const CACHE_KEY = 'now-widget-data';
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
@@ -49,13 +49,13 @@ export default function useNowData() {
 
         // Fetch fresh data
         console.log('Fetching fresh data from APIs...');
-        const [githubData, spotifyData] = await Promise.all([
+        const [githubData, quoteData] = await Promise.all([
           fetchGitHubActivity(),
-          fetchSpotifyActivity(),
+          fetchQuoteOfTheDay(),
         ]);
 
         console.log('GitHub data:', githubData);
-        console.log('Spotify data:', spotifyData);
+        console.log('Quote data:', quoteData);
 
         const currentTime = new Date().toLocaleTimeString('en-US', {
           timeZone: now.location.timezone,
@@ -66,7 +66,7 @@ export default function useNowData() {
 
         const newActivity: NowActivity = {
           github: githubData,
-          spotify: spotifyData,
+          quote: quoteData,
           location: {
             city: now.location.city,
             timezone: now.location.timezone,
@@ -172,24 +172,23 @@ async function fetchGitHubActivity() {
   return undefined;
 }
 
-// Fetch Spotify activity (mock for now - requires OAuth for real implementation)
-async function fetchSpotifyActivity() {
-  if (!now.spotify.enabled) return undefined;
+// Quote of the Day (deterministic per day in configured timezone)
+async function fetchQuoteOfTheDay() {
+  if (!now.quote?.enabled) return undefined;
 
-  // Mock data for demo purposes
-  // To integrate real Spotify: Set up OAuth flow and use /me/player/currently-playing endpoint
-  const mockSongs = [
-    { song: 'Weightless', artist: 'Marconi Union' },
-    { song: 'Clair de Lune', artist: 'Claude Debussy' },
-    { song: 'Strobe', artist: 'deadmau5' },
-    { song: 'Avril 14th', artist: 'Aphex Twin' },
-  ];
-
-  const random = mockSongs[Math.floor(Math.random() * mockSongs.length)];
-  const isPlaying = Math.random() > 0.5; // Random for demo
-
-  return {
-    ...random,
-    isPlaying,
-  };
+  try {
+    // Build a stable date key in the preferred timezone
+    const dateStr = new Date().toLocaleDateString('en-CA', { timeZone: now.location.timezone }); // YYYY-MM-DD
+    // Simple string hash to map to quotes array
+    let hash = 0;
+    for (let i = 0; i < dateStr.length; i++) {
+      hash = (hash * 31 + dateStr.charCodeAt(i)) >>> 0;
+    }
+    const idx = hash % quotes.length;
+    const q = quotes[idx];
+    return { text: q.text, author: q.author, };
+  } catch (e) {
+    console.error('Quote fetch failed:', e);
+    return undefined;
+  }
 }

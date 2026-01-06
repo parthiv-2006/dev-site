@@ -19,10 +19,9 @@ export type NowActivity = {
     message: string;
     timestamp: string;
   };
-  spotify?: {
-    song: string;
-    artist: string;
-    isPlaying: boolean;
+  quote?: {
+    text: string;
+    author?: string;
   };
   location: {
     city: string;
@@ -36,9 +35,8 @@ export const now = {
     enabled: true,
     username: 'parthiv-2006', // Replace with your GitHub username
   },
-  spotify: {
+  quote: {
     enabled: true,
-    // For demo: will show mock data. Connect real Spotify API for live updates
   },
   location: {
     city: 'Toronto',
@@ -123,3 +121,17 @@ export const contact = {
     { label: 'Dribbble', url: '#' },
   ],
 };
+
+// Simple quote bank for Quote of the Day
+export const quotes = [
+  { text: 'Simplicity is the ultimate sophistication.', author: 'Leonardo da Vinci' },
+  { text: 'Make it work, make it right, make it fast.', author: 'Kent Beck' },
+  { text: 'Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.', author: 'Antoine de Saint-Exupéry' },
+  { text: 'The details are not the details. They make the design.', author: 'Charles Eames' },
+  { text: 'Programs must be written for people to read, and only incidentally for machines to execute.', author: 'Harold Abelson' },
+  { text: 'The only way to go fast, is to go well.', author: 'Robert C. Martin' },
+  { text: 'Focus is saying no.', author: 'Steve Jobs' },
+  { text: 'Small steps, steady progress.', author: 'Unknown' },
+  { text: 'Good design is as little design as possible.', author: 'Dieter Rams' },
+  { text: 'Ship early, learn fast.', author: 'Unknown' },
+];
