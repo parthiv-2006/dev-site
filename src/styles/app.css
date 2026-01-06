@@ -36,6 +36,11 @@
   gap: 10px;
 }
 
+.nav__right {
+  display: flex;
+  align-items: center;
+}
+
 .nav__brand {
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -97,11 +102,24 @@
   border: 1px solid var(--glass-light);
   backdrop-filter: blur(10px);
 }
+ 
+.now-inline {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--glass-light);
+  color: var(--text-secondary);
+  border: 1px solid var(--glass-medium);
+}
+.now-inline__status { color: var(--text-primary); font-weight: 600; }
+.now-inline__time { color: var(--text-secondary); }
 
 .hero {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: clamp(20px, 4vw, 40px);
+  gap: clamp(24px, 4vw, 48px);
   align-items: center;
   position: relative;
 }
@@ -189,7 +207,7 @@
 
 .section {
   display: grid;
-  gap: 14px;
+  gap: clamp(16px, 2vw, 22px);
   padding: clamp(18px, 2vw, 22px);
   border-radius: var(--radius-lg);
   background: var(--glass-medium);
@@ -212,7 +230,7 @@
 
 .section__grid {
   display: grid;
-  gap: var(--grid-gap);
+  gap: clamp(16px, 2vw, 24px);
 }
 
 .section__grid--two {
@@ -304,6 +322,12 @@
   border-color: var(--glass-medium);
 }
 
+.button--success {
+  background: linear-gradient(120deg, #16a34a, #22c55e);
+  color: var(--bg-dark);
+  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.28);
+}
+
 .button:hover,
 .button:focus-visible {
   transform: translateY(-2px);
@@ -344,7 +368,7 @@
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .list__item {
@@ -405,7 +429,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   font-size: 0.95rem;
   color: var(--text-secondary);
 }
@@ -492,4 +516,20 @@
 
 .text-cyan {
   color: var(--accent-cyan);
+}
+
+/* About highlighting */
+.text-highlight { color: var(--text-primary); font-weight: var(--font-weight-bold); }
+.text-muted { color: var(--text-secondary); }
+.about__story { color: var(--text-secondary); }
+.about__highlights { align-content: start; }
+
+/* Grain overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><filter id="n" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');
+  opacity: var(--grain-opacity);
 }

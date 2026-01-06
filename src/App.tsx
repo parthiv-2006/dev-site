@@ -6,6 +6,7 @@ import Projects from './sections/Projects';
 import Process from './sections/Process';
 import Contact from './sections/Contact';
 import ThemePlayground from './components/ThemePlayground';
+import NowInline from './components/NowInline';
 import useMagnetCursor from './hooks/useMagnetCursor';
 import useScrollStagger from './hooks/useScrollStagger';
 import './styles/app.css';
@@ -32,6 +33,9 @@ function App() {
           <div className="nav__left">
             <div className="nav__brand">Your Name — Developer</div>
             <span className="badge-pill">Available for select work</span>
+          </div>
+          <div className="nav__right">
+            <NowInline />
           </div>
           <button
             className="nav__toggle"
@@ -77,6 +81,9 @@ function App() {
 
       {/* Live Theme Playground */}
       <ThemePlayground />
+
+      {/* Grain texture overlay */}
+      <div aria-hidden className="grain-overlay" />
     </div>
   );
 }
