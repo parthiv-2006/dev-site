@@ -1,4 +1,5 @@
 import ActionButton from '../components/ActionButton';
+import CopyEmailButton from '../components/CopyEmailButton';
 import Section from '../components/Section';
 import { contact } from '../content/data';
 
@@ -8,7 +9,7 @@ function Contact() {
       <div className="section__grid">
         <p>{contact.note}</p>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <ActionButton href={`mailto:${contact.email}`} label="Email" />
+          <CopyEmailButton />
           {contact.socials.map((item) => (
             <ActionButton
               key={item.label}
