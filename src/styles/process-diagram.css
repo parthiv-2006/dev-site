@@ -11,7 +11,7 @@
 }
 
 .process-diagram__line {
-  stroke: var(--glass-medium);
+  stroke: var(--theme-accent);
   stroke-width: 2;
   fill: none;
   stroke-linecap: round;
@@ -20,11 +20,7 @@
 }
 
 .process-diagram__line--draw {
-  animation: draw-line var(--motion-slow) var(--easing-out) forwards;
-}
-
-.process-diagram__line--draw:nth-of-type(2) {
-  animation-delay: var(--draw-delay, 0s);
+  transition: stroke-dashoffset var(--motion-base) var(--easing-out);
 }
 
 .process-diagram__node {

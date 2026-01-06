@@ -8,6 +8,7 @@ function ProcessDiagram({ steps }: ProcessDiagramProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [progress, setProgress] = useState(0); // 0→1 scroll progress across section
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,7 +24,26 @@ function ProcessDiagram({ steps }: ProcessDiagramProps) {
       observer.observe(containerRef.current);
     }
 
-    return () => observer.disconnect();
+    // Scroll-linked progress
+    const onScroll = () => {
+      const el = containerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const viewportH = window.innerHeight || document.documentElement.clientHeight;
+      // Start progress when top enters viewport, finish when bottom leaves
+      const total = rect.height + viewportH;
+      const scrolled = Math.min(Math.max(viewportH - rect.top, 0), total);
+      const ratio = scrolled / total;
+      setProgress(Math.max(0, Math.min(1, ratio)));
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   return (
@@ -36,22 +56,34 @@ function ProcessDiagram({ steps }: ProcessDiagramProps) {
         aria-hidden="true"
       >
         {/* Connecting lines */}
-        <line
-          x1="150"
-          y1="100"
-          x2="450"
-          y2="100"
-          className={`process-diagram__line ${isVisible ? 'process-diagram__line--draw' : ''}`}
-          style={{ '--draw-delay': '0.2s' } as React.CSSProperties & { '--draw-delay': string }}
-        />
-        <line
-          x1="550"
-          y1="100"
-          x2="850"
-          y2="100"
-          className={`process-diagram__line ${isVisible ? 'process-diagram__line--draw' : ''}`}
-          style={{ '--draw-delay': '0.4s' } as React.CSSProperties & { '--draw-delay': string }}
-        />
+        {(() => {
+          const dash = 300;
+          // Split progress evenly across two line segments
+          const seg1 = Math.min(progress / 0.5, 1);
+          const seg2 = progress <= 0.5 ? 0 : Math.min((progress - 0.5) / 0.5, 1);
+          const offset1 = Math.round(dash * (1 - seg1));
+          const offset2 = Math.round(dash * (1 - seg2));
+          return (
+            <>
+              <line
+                x1="150"
+                y1="100"
+                x2="450"
+                y2="100"
+                className={`process-diagram__line ${isVisible ? 'process-diagram__line--draw' : ''}`}
+                strokeDashoffset={offset1}
+              />
+              <line
+                x1="550"
+                y1="100"
+                x2="850"
+                y2="100"
+                className={`process-diagram__line ${isVisible ? 'process-diagram__line--draw' : ''}`}
+                strokeDashoffset={offset2}
+              />
+            </>
+          );
+        })()}
 
         {/* Nodes */}
         {steps.map((_, index) => {
