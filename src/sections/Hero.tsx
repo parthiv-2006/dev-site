@@ -10,8 +10,8 @@ function Hero() {
         <h1 className="hero__title">{hero.title}</h1>
         <p className="hero__lede">{hero.lede}</p>
         <div className="hero__actions">
-          <ActionButton href="#projects" label="View projects" />
-          <ActionButton href="#contact" label="Get in touch" tone="ghost" />
+          <ActionButton href="#projects" label="View work" />
+          <ActionButton href="/resume.pdf" label="Download Resume" tone="ghost" download="Parthiv_Paul_Resume.pdf" />
         </div>
       </div>
 
