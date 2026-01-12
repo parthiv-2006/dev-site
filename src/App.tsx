@@ -2,8 +2,9 @@ import { useState } from 'react';
 
 import Hero from './sections/Hero';
 import About from './sections/About';
+import Skills from './sections/Skills';
 import Projects from './sections/Projects';
-import Process from './sections/Process';
+import Education from './sections/Education';
 import Contact from './sections/Contact';
 import ThemePlayground from './components/ThemePlayground';
 import NowInline from './components/NowInline';
@@ -11,6 +12,7 @@ import useMagnetCursor from './hooks/useMagnetCursor';
 import useScrollStagger from './hooks/useScrollStagger';
 import './styles/app.css';
 import './styles/stat-counter.css';
+import './styles/project-card.css'; // Ensure project-card styles are loaded if not already via index.css common practice to align imports
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +21,7 @@ function App() {
   const isNarrow = typeof window !== 'undefined' && window.matchMedia('(max-width: 720px)').matches;
 
   // Initialize interaction hooks
-  useMagnetCursor({ selector: '.button, .nav__link, .project-card__link', distance: 100 });
+  useMagnetCursor({ selector: '.button, .nav__link, .project-card__link, .project-card__action-btn', distance: 100 });
   useScrollStagger();
 
   return (
@@ -31,8 +33,8 @@ function App() {
       <nav className="nav" aria-label="Primary">
         <div className="nav__top">
           <div className="nav__left">
-            <div className="nav__brand">Your Name — Developer</div>
-            <span className="badge-pill">Available for select work</span>
+            <div className="nav__brand">Parthiv Paul</div>
+            <span className="badge-pill">CS Student @ UofT</span>
           </div>
           <div className="nav__right">
             <NowInline />
@@ -52,11 +54,17 @@ function App() {
           className={`nav__links ${menuOpen ? 'nav__links--open' : ''}`}
           aria-hidden={!menuOpen && isNarrow ? true : undefined}
         >
+          <a className="nav__link" href="#about" onClick={closeMenu}>
+            About
+          </a>
+          <a className="nav__link" href="#skills" onClick={closeMenu}>
+            Skills
+          </a>
           <a className="nav__link" href="#projects" onClick={closeMenu}>
             Work
           </a>
-          <a className="nav__link" href="#process" onClick={closeMenu}>
-            Process
+          <a className="nav__link" href="#education" onClick={closeMenu}>
+            Education
           </a>
           <a className="nav__link" href="#contact" onClick={closeMenu}>
             Contact
@@ -67,8 +75,9 @@ function App() {
       <main id="main-content">
         <Hero />
         <About />
+        <Skills />
         <Projects />
-        <Process />
+        <Education />
         <Contact />
       </main>
 
