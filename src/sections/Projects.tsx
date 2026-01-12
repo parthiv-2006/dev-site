@@ -20,6 +20,8 @@ function Projects() {
             impact={project.impact}
             tech={project.tech}
             link={project.link}
+            repoUrl={project.repoUrl}
+            demoUrl={project.demoUrl}
             imageUrl={project.imageUrl}
             videoUrl={project.videoUrl}
           />

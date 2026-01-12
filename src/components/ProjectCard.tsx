@@ -6,11 +6,13 @@ type ProjectCardProps = {
   impact: string;
   tech: string[];
   link?: string;
+  repoUrl?: string;
+  demoUrl?: string;
   imageUrl?: string;
   videoUrl?: string;
 };
 
-function ProjectCard({ title, summary, impact, tech, link, imageUrl, videoUrl }: ProjectCardProps) {
+function ProjectCard({ title, summary, impact, tech, link, repoUrl, demoUrl, imageUrl, videoUrl }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -53,11 +55,23 @@ function ProjectCard({ title, summary, impact, tech, link, imageUrl, videoUrl }:
           ))}
         </div>
 
-        {link && (
-          <a href={link} className="project-card__link">
-            View details →
-          </a>
-        )}
+        <div className="project-card__actions">
+          {repoUrl && (
+            <a href={repoUrl} target="_blank" rel="noopener noreferrer" className="project-card__action-btn">
+              View Code
+            </a>
+          )}
+          {demoUrl && (
+            <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="project-card__action-btn">
+              Live Demo
+            </a>
+          )}
+          {link && !repoUrl && !demoUrl && (
+            <a href={link} className="project-card__link">
+              View details →
+            </a>
+          )}
+        </div>
       </div>
 
       {(imageUrl || videoUrl) && (
