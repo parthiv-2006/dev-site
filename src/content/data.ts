@@ -4,13 +4,23 @@ export type Project = {
   impact: string;
   tech: string[];
   link?: string;
+  repoUrl?: string;
+  demoUrl?: string;
   imageUrl?: string;
   videoUrl?: string;
 };
 
-export type ProcessStep = {
-  title: string;
-  detail: string;
+export type Education = {
+  school: string;
+  degree: string;
+  year: string;
+  coursework?: string[];
+  activities?: string[];
+};
+
+export type SkillCategory = {
+  category: string;
+  items: string[];
 };
 
 export type NowActivity = {
@@ -33,7 +43,7 @@ export type NowActivity = {
 export const now = {
   github: {
     enabled: true,
-    username: 'parthiv-2006', // Replace with your GitHub username
+    username: 'parthiv-2006',
   },
   quote: {
     enabled: true,
@@ -45,26 +55,57 @@ export const now = {
 };
 
 export const hero = {
-  badge: 'Engineer + Story-first builder',
-  title: 'Building lean, clear experiences for the web.',
+  badge: 'CS Student + Full-stack Dev',
+  title: 'Crafting software with purpose and precision.',
   lede:
-    'Full-stack leaning frontend engineer crafting interfaces that stay memorable without drowning out the substance. I blend fast iterations with thoughtful systems to ship work that feels intentional.',
+    'Second-year Computer Science student passionate about building scalable web applications. I combine academic foundations with hands-on development to solve real-world problems.',
   stats: [
-    { label: 'Shipped launches', value: '24', note: 'From greenfield to refactors' },
-    { label: 'Latency wins', value: '-38%', note: 'Average perf uplift on key pages' },
+    { label: 'GPA', value: '3.9', note: 'Cumulative' }, // Placeholder
+    { label: 'Projects', value: '12+', note: 'Completed' },
   ],
 };
 
 export const about = {
   story:
-    'I enjoy translating ambiguous ideas into confident interfaces. My work pairs calm aesthetics with crisp copy, so teams and users can orient quickly.',
+    'I believe the best software is built at the intersection of robust engineering and intuitive design. As a student, I am constantly learning and applying new technologies to build tools that matter.',
   highlights: [
-    'Design/dev bridge: comfortable in Figma, opinionated in React.',
-    'Systems thinker: tokens, patterns, and guardrails to scale calmly.',
-    'Delivery focused: bias for shipping small, learning fast, and polishing after.',
-    'Live design systems: try the interactive theme playground in the corner →',
+    'Full-stack ready: Comfortably traversing the stack from DB to UI.',
+    'Quick learner: Adapting to new frameworks and languages rapidly.',
+    'Detail-oriented: Writing clean, maintainable, and documented code.',
+    'Collaborative: Experienced in agile workflows and team projects.',
   ],
 };
+
+export const education: Education[] = [
+  {
+    school: 'University of Technology', // Placeholder
+    degree: 'B.Sc. Computer Science',
+    year: 'Expected 2027',
+    coursework: [
+      'Data Structures & Algorithms',
+      'Object-Oriented Programming',
+      'Database Systems',
+      'Web Development',
+      'Linear Algebra',
+    ],
+    activities: ['CS Club Member', 'Hackathon Participant'],
+  },
+];
+
+export const skills: SkillCategory[] = [
+  {
+    category: 'Languages',
+    items: ['makeTypeScript', 'JavaScript', 'Python', 'Java', 'SQL', 'HTML/CSS'],
+  },
+  {
+    category: 'Frameworks & Libs',
+    items: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind', 'Framer Motion'],
+  },
+  {
+    category: 'Tools & DevOps',
+    items: ['Git', 'Docker', 'PostgreSQL', 'Figma', 'Vercel', 'VS Code'],
+  },
+];
 
 export const projects: Project[] = [
   {
@@ -73,8 +114,9 @@ export const projects: Project[] = [
     impact: 'Cut mean-time-to-detect by 19% via clearer alert groupings and fast drilldowns.',
     tech: ['React', 'TypeScript', 'WebSockets', 'Vite'],
     link: '#',
-    imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"%3E%3Crect fill="%231a2332" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="%23d97706" text-anchor="middle" dominant-baseline="middle"%3ESignalboard Demo%3C/text%3E%3C/svg%3E',
-    videoUrl: undefined,
+    repoUrl: 'https://github.com/parthiv-2006',
+    demoUrl: '#',
+    imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"%3E%3Crect fill="%231a2332" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="%23d97706" text-anchor="middle" dominant-baseline="middle"%3ESignalboard%3C/text%3E%3C/svg%3E',
   },
   {
     title: 'Atlas Docs',
@@ -82,8 +124,8 @@ export const projects: Project[] = [
     impact: 'Increased task completion by 27% for new developers in usability studies.',
     tech: ['MDX', 'Next.js', 'Search'],
     link: '#',
-    imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"%3E%3Crect fill="%231a2332" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="%2306b6d4" text-anchor="middle" dominant-baseline="middle"%3EAtlas Docs Demo%3C/text%3E%3C/svg%3E',
-    videoUrl: undefined,
+    repoUrl: 'https://github.com/parthiv-2006',
+    imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"%3E%3Crect fill="%231a2332" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="%2306b6d4" text-anchor="middle" dominant-baseline="middle"%3EAtlas Docs%3C/text%3E%3C/svg%3E',
   },
   {
     title: 'Cirrus Design Kit',
@@ -91,34 +133,18 @@ export const projects: Project[] = [
     impact: 'Reduced net-new component requests by 42% and improved UI consistency.',
     tech: ['Tokens', 'Storybook', 'Theming'],
     link: '#',
-    imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"%3E%3Crect fill="%231a2332" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="%23f59e0b" text-anchor="middle" dominant-baseline="middle"%3ECircus Design Kit Demo%3C/text%3E%3C/svg%3E',
-    videoUrl: undefined,
-  },
-  
-];
-
-export const process: ProcessStep[] = [
-  {
-    title: 'Frame the win',
-    detail: 'Clarify constraints, success signals, and the shortest path to learning.',
-  },
-  {
-    title: 'Design the spine',
-    detail: 'Build the minimum durable skeleton: nav, spacing, and data shapes.',
-  },
-  {
-    title: 'Ship, measure, refine',
-    detail: 'Release small, validate with data and demos, iterate with polish.',
+    repoUrl: 'https://github.com/parthiv-2006',
+    demoUrl: '#',
+    imageUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"%3E%3Crect fill="%231a2332" width="600" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="%23f59e0b" text-anchor="middle" dominant-baseline="middle"%3ECirrus Kit%3C/text%3E%3C/svg%3E',
   },
 ];
 
 export const contact = {
-  note: 'Curious about collaborating, refactoring a product surface, or exploring a new role? I love talking shop about fast UI and calm design systems.',
-  email: 'you@example.com',
+  note: 'Currently seeking software engineering internships for Summer 2025. I love talking about full-stack development and solving complex problems.',
+  email: 'parthiv@example.com',
   socials: [
     { label: 'LinkedIn', url: '#' },
-    { label: 'GitHub', url: '#' },
-    { label: 'Dribbble', url: '#' },
+    { label: 'GitHub', url: 'https://github.com/parthiv-2006' },
   ],
 };
 
@@ -126,12 +152,6 @@ export const contact = {
 export const quotes = [
   { text: 'Simplicity is the ultimate sophistication.', author: 'Leonardo da Vinci' },
   { text: 'Make it work, make it right, make it fast.', author: 'Kent Beck' },
-  { text: 'Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.', author: 'Antoine de Saint-Exupéry' },
-  { text: 'The details are not the details. They make the design.', author: 'Charles Eames' },
-  { text: 'Programs must be written for people to read, and only incidentally for machines to execute.', author: 'Harold Abelson' },
   { text: 'The only way to go fast, is to go well.', author: 'Robert C. Martin' },
-  { text: 'Focus is saying no.', author: 'Steve Jobs' },
-  { text: 'Small steps, steady progress.', author: 'Unknown' },
-  { text: 'Good design is as little design as possible.', author: 'Dieter Rams' },
   { text: 'Ship early, learn fast.', author: 'Unknown' },
 ];
