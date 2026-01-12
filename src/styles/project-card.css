@@ -152,6 +152,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .project-card::before,
   .project-card__link {
     transition: none;
@@ -160,4 +161,31 @@
   .project-card__media {
     transition: none;
   }
+}
+
+.project-card__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.project-card__action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--glass-light);
+  border: 1px solid var(--glass-medium);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--motion-base) var(--easing-out);
+}
+
+.project-card__action-btn:hover,
+.project-card__action-btn:focus-visible {
+  background: var(--glass-medium);
+  color: var(--theme-accent);
+  border-color: var(--theme-accent-light);
 }

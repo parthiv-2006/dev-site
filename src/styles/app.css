@@ -240,7 +240,7 @@
 .projects__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(24px, 2.8vw, 36px);
+  gap: clamp(32px, 3vw, 48px);
 }
 
 .card {
