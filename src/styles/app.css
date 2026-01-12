@@ -7,102 +7,54 @@
   gap: clamp(44px, 5vw, 72px);
 }
 
-.nav {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px 18px;
-  border-radius: var(--radius-lg);
-  background: var(--glass-medium);
-  border: 1px solid var(--glass-strong);
-  box-shadow: var(--shadow-soft);
-  position: sticky;
-  top: 16px;
-  backdrop-filter: blur(18px);
-  z-index: 10;
-}
-
-.nav__top {
+.nav-dock {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
+  padding: 8px;
+  border-radius: var(--radius-full);
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  max-width: 90vw;
+  overflow-x: auto;
 }
 
-.nav__left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav__right {
-  display: flex;
-  align-items: center;
-}
-
-.nav__brand {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.nav__links {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.nav__links a {
-  display: inline-flex;
-}
-
-.nav__link {
-  padding: 8px 12px;
-  border-radius: var(--radius-sm);
+.nav-dock__item {
+  padding: 10px 16px;
+  border-radius: var(--radius-full);
   color: var(--text-secondary);
   font-weight: 500;
-  transition: color var(--motion-base) var(--easing-out), background var(--motion-base) var(--easing-out);
+  font-size: 0.9rem;
+  transition: all 0.2s var(--easing-out);
+  white-space: nowrap;
 }
 
-.nav__link:hover,
-.nav__link:focus-visible {
-  color: var(--theme-accent);
-  background: var(--glass-light);
-  outline: none;
-}
-
-.nav__toggle {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 12px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--glass-light);
-  background: var(--glass-light);
-  color: var(--text-primary);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background var(--motion-base) var(--easing-out);
-}
-
-.nav__toggle:hover,
-.nav__toggle:focus-visible {
+.nav-dock__item:hover {
   background: var(--glass-medium);
-  outline: none;
+  color: var(--text-primary);
 }
 
-.badge-pill {
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-accent) 15%, transparent), color-mix(in srgb, var(--theme-accent-light) 10%, transparent));
+.nav-dock__item--active {
+  background: var(--glass-strong);
   color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: 1px solid var(--glass-light);
-  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
 }
- 
+
+@media (min-width: 768px) {
+  .nav-dock {
+    top: 24px;
+    bottom: auto;
+  }
+}
+
+
 .now-inline {
   display: inline-flex;
   gap: 10px;
@@ -113,8 +65,15 @@
   color: var(--text-secondary);
   border: 1px solid var(--glass-medium);
 }
-.now-inline__status { color: var(--text-primary); font-weight: 600; }
-.now-inline__time { color: var(--text-secondary); }
+
+.now-inline__status {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.now-inline__time {
+  color: var(--text-secondary);
+}
 
 .hero {
   display: grid;
@@ -357,6 +316,7 @@
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -419,6 +379,7 @@
     opacity: 0;
     transform: scale(0.95) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -519,10 +480,22 @@
 }
 
 /* About highlighting */
-.text-highlight { color: var(--text-primary); font-weight: var(--font-weight-bold); }
-.text-muted { color: var(--text-secondary); }
-.about__story { color: var(--text-secondary); }
-.about__highlights { align-content: start; }
+.text-highlight {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+.about__story {
+  color: var(--text-secondary);
+}
+
+.about__highlights {
+  align-content: start;
+}
 
 /* Grain overlay */
 .grain-overlay {
