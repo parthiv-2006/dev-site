@@ -11,17 +11,33 @@
   --glass-strong: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.08);
 
-  /* Neon Aurora Accents */
-  --accent-cyan: #22d3ee;
-  --accent-cyan-dim: #0e7490;
+  /* Theme Defaults (Safe Fallbacks) */
+  --theme-accent: #22d3ee;
+  --theme-accent-light: #67e8f9;
+  --theme-radius: 16px;
+  --theme-font-size-base: 16px;
+
+  /* Dynamic Theme Accents */
+  --accent-primary: var(--theme-accent, #22d3ee);
+  --accent-primary-light: var(--theme-accent-light, #67e8f9);
+
+  /* Mapped Accents - ensuring controls update all colors */
+  --accent-cyan: var(--accent-primary);
+  --accent-cyan-dim: color-mix(in srgb, var(--accent-primary), black 30%);
+  --accent-copper: var(--accent-primary);
+  --accent-copper-light: var(--accent-primary-light);
+
   --accent-purple: #c084fc;
   --accent-pink: #f472b6;
-  --accent-gradient: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+  --accent-gradient: linear-gradient(to right, var(--accent-primary), var(--accent-purple));
 
   /* Text & Typography */
   --text-primary: #f2f2f2;
   --text-secondary: #a1a1aa;
   --text-tertiary: #52525b;
+
+  /* Base Font Size controlled by Theme */
+  font-size: var(--theme-font-size-base, 16px);
 
   --font-sans: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
@@ -32,9 +48,12 @@
 
   /* Spacing & Layout */
   --max-width: 1200px;
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+
+  /* Dynamic Radius */
+  --radius-base: var(--theme-radius, 16px);
+  --radius-sm: calc(var(--radius-base) * 0.5);
+  --radius-md: var(--radius-base);
+  --radius-lg: calc(var(--radius-base) * 1.5);
   --radius-full: 9999px;
 
   /* Motion */
