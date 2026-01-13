@@ -21,7 +21,7 @@ function Hero() {
   };
 
   return (
-    <header className="hero" id="top" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+    <header className="hero" id="top" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', paddingTop: 'clamp(60px, 12vh, 140px)' }}>
       <motion.div
         className="hero__content"
         style={{ maxWidth: '900px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}
@@ -54,7 +54,7 @@ function Hero() {
             lineHeight: '1',
             fontWeight: '800',
             letterSpacing: '-0.03em',
-            background: 'linear-gradient(to bottom right, #fff, #999)',
+            background: 'linear-gradient(to bottom, #ffffff 0%, #e8e8e8 40%, #b8c6d6 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '16px'
