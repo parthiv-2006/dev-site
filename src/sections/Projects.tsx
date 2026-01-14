@@ -4,7 +4,7 @@ import { projects } from '../content/data';
 
 function Projects() {
   return (
-    <section id="projects" className="section" style={{ maxWidth: '1000px', margin: '0 auto', padding: '100px 20px' }}>
+    <section id="projects" className="section section--full-width">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ function Projects() {
         <h2 className="section__title" style={{ fontSize: '3rem', margin: '16px 0 0' }}>Featured Projects</h2>
       </motion.div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+      <div className="projects__container">
         {projects.map((project, index) => {
           const isEven = index % 2 === 0;
           return (
@@ -25,15 +25,12 @@ function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
+              className="project__row"
               style={{
-                display: 'flex',
                 flexDirection: isEven ? 'row' : 'row-reverse',
-                gap: '40px',
-                alignItems: 'center',
-                flexWrap: 'wrap' // For mobile responsiveness
               }}
             >
-              <div style={{ flex: 1, minWidth: '300px' }}>
+              <div className="project__image-wrapper">
                 <a
                   href={project.link || '#'}
                   target="_blank"
@@ -49,7 +46,7 @@ function Projects() {
                   <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.4s ease' }} className="project-img-hover" />
                 </a>
               </div>
-              <div style={{ flex: 1, minWidth: '300px', textAlign: isEven ? 'left' : 'right' }}>
+              <div className="project__content" style={{ textAlign: isEven ? 'left' : 'right' }}>
                 <h3 style={{ fontSize: '2rem', marginBottom: '12px' }}>{project.title}</h3>
                 <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', marginBottom: '24px', lineHeight: '1.6' }}>
                   {project.summary}

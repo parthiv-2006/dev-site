@@ -6,7 +6,7 @@ function Skills() {
     const allSkills = skills.flatMap(s => s.items);
 
     return (
-        <section id="skills" className="section" style={{ overflow: 'hidden', padding: '100px 0' }}>
+        <section id="skills" className="section section--full-width">
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
                 <h2 className="section__title" style={{ fontSize: '2rem' }}>Technical Arsenal</h2>
             </div>
@@ -25,7 +25,7 @@ function Skills() {
                 </motion.div>
             </div>
 
-            <div style={{ marginTop: '60px', maxWidth: '1000px', margin: '60px auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px', padding: '0 20px' }}>
+            <div className="skills__grid">
                 {skills.map(group => (
                     <div
                         key={group.category}
