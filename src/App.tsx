@@ -1,5 +1,6 @@
 
 
+import { useState, useEffect } from 'react';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Skills from './sections/Skills';
@@ -14,9 +15,20 @@ import './styles/stat-counter.css';
 import './styles/project-card.css';
 
 function App() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
   // Initialize interaction hooks
   useMagnetCursor({ selector: '.button, .nav__link, .project-card__link, .project-card__action-btn', distance: 100 });
   useScrollStagger();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="page">
@@ -24,7 +36,7 @@ function App() {
         Skip to main content
       </a>
 
-      <nav className="nav-dock" aria-label="Primary">
+      <nav className={`nav-dock ${isScrolled ? 'nav-dock--scrolled' : ''}`} aria-label="Primary">
         <a className="nav-dock__item" href="#top">Home</a>
         <a className="nav-dock__item" href="#about">About</a>
         <a className="nav-dock__item" href="#skills">Skills</a>

@@ -26,7 +26,27 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   z-index: 1000;
   max-width: 90vw;
-  overflow-x: auto;
+  transition: all 0.4s var(--easing-out);
+}
+
+.nav-dock--scrolled {
+  background: rgba(10, 10, 10, 0.1);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: rgba(255, 255, 255, 0.02);
+  box-shadow: none;
+  opacity: 0.5;
+  transform: translateX(-50%) scale(0.9);
+}
+
+.nav-dock--scrolled:hover {
+  opacity: 1;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%) scale(1);
 }
 
 .nav-dock__item {
