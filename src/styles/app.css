@@ -1,10 +1,10 @@
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: clamp(26px, 3.5vw, 46px);
+  padding: clamp(32px, 4vw, 56px);
   display: flex;
   flex-direction: column;
-  gap: clamp(44px, 5vw, 72px);
+  gap: clamp(64px, 8vw, 120px);
 }
 
 .nav-dock {
@@ -221,19 +221,20 @@
 
 .section__grid {
   display: grid;
-  gap: clamp(20px, 2.4vw, 28px);
+  gap: clamp(24px, 3vw, 36px);
 }
 
 .section__grid--two {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(24px, 3vw, 40px);
 }
 
 /* Skills Grid - Consistent card layout */
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(20px, 2.5vw, 32px);
-  margin-top: clamp(32px, 4vw, 60px);
+  gap: clamp(24px, 3vw, 40px);
+  margin-top: clamp(40px, 5vw, 72px);
   width: 100%;
 }
 
@@ -241,7 +242,7 @@
 .projects__container {
   display: flex;
   flex-direction: column;
-  gap: clamp(48px, 6vw, 80px);
+  gap: clamp(64px, 8vw, 100px);
   width: 100%;
 }
 
@@ -265,11 +266,11 @@
 .projects__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(32px, 3vw, 48px);
+  gap: clamp(40px, 4vw, 64px);
 }
 
 .card {
-  padding: 20px;
+  padding: clamp(20px, 2.5vw, 28px);
   border-radius: var(--radius-md);
   background: var(--glass-light);
   color: var(--text-primary);
