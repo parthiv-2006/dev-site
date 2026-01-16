@@ -107,7 +107,7 @@ function Projects() {
                 fontSize: '0.85rem',
                 background: selectedTech === tech ? 'var(--accent-cyan)' : 'var(--glass-light)',
                 border: `1px solid ${selectedTech === tech ? 'var(--accent-cyan)' : 'var(--glass-border)'}`,
-                color: selectedTech === tech ? 'var(--bg-primary)' : 'var(--text-secondary)',
+                color: selectedTech === tech ? '#ffffff' : 'var(--text-secondary)',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
                 fontWeight: selectedTech === tech ? '600' : '400',

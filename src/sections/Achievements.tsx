@@ -64,7 +64,7 @@ function Achievements() {
                       fontSize: '0.7rem',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
-                      background: categoryColors[achievement.category] + '20',
+                      background: `color-mix(in srgb, ${categoryColors[achievement.category]} 20%, transparent)`,
                       border: `1px solid ${categoryColors[achievement.category]}`,
                       color: categoryColors[achievement.category],
                     }}

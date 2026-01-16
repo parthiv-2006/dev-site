@@ -144,7 +144,7 @@ function SocialShare({ url, title, description }: SocialShareProps) {
           borderRadius: '8px',
           background: copied ? 'var(--accent-green)' : 'var(--glass-light)',
           border: `1px solid ${copied ? 'var(--accent-green)' : 'var(--glass-border)'}`,
-          color: copied ? 'var(--bg-dark)' : 'var(--text-secondary)',
+          color: copied ? '#ffffff' : 'var(--text-secondary)',
           cursor: 'pointer',
           fontSize: '0.9rem',
           transition: 'all 0.2s ease',
