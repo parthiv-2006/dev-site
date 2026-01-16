@@ -17,35 +17,35 @@
   gap: 8px;
   padding: 10px 14px;
   border-radius: var(--radius-full);
-  background: rgba(15, 15, 18, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--nav-border);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    var(--shadow-medium),
+    inset 0 1px 0 color-mix(in srgb, var(--text-primary) 8%, transparent);
   z-index: 1000;
   max-width: 90vw;
-  transition: all 0.4s var(--easing-out);
+  transition: all 0.4s var(--easing-out), background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-dock--scrolled {
-  background: rgba(15, 15, 18, 0.3);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-color: rgba(255, 255, 255, 0.04);
-  box-shadow: none;
-  opacity: 0.6;
+  background: var(--nav-bg-scrolled);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: var(--nav-border-scrolled);
+  box-shadow: var(--shadow-soft);
+  opacity: 0.7;
   transform: translateX(-50%) scale(0.95);
 }
 
 .nav-dock--scrolled:hover {
   opacity: 1;
-  background: rgba(15, 15, 18, 0.9);
+  background: var(--nav-bg-hover);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-color: var(--nav-border);
+  box-shadow: var(--shadow-medium);
   transform: translateX(-50%) scale(1);
 }
 
@@ -157,8 +157,8 @@
 .hero__stat-chip {
   padding: 18px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--glass-light);
+  background: var(--glass-light);
+  border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
@@ -343,16 +343,23 @@
   border: 1px solid transparent;
   font-weight: 600;
   cursor: pointer;
-  transition: transform var(--motion-base) var(--easing-out), box-shadow var(--motion-base) var(--easing-out), background var(--motion-base) var(--easing-out);
+  transition: transform var(--motion-base) var(--easing-out), box-shadow var(--motion-base) var(--easing-out), background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .button--primary {
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-light));
-  color: var(--bg-dark);
+  color: #ffffff;
   box-shadow:
     0 8px 24px color-mix(in srgb, var(--accent-primary) 40%, transparent),
     0 0 0 1px color-mix(in srgb, var(--accent-primary) 30%, transparent);
   position: relative;
+  transition: transform var(--motion-base) var(--easing-out), box-shadow var(--motion-base) var(--easing-out), background 0.3s ease, color 0.3s ease;
+}
+
+[data-theme='light'] .button--primary {
+  /* Ensure white text on light theme primary buttons maintains contrast */
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .button--primary::before {
@@ -375,13 +382,26 @@
 .button--ghost {
   background: var(--glass-light);
   color: var(--text-primary);
-  border-color: var(--glass-medium);
+  border-color: var(--glass-border);
+  transition: transform var(--motion-base) var(--easing-out), box-shadow var(--motion-base) var(--easing-out), background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.button--ghost:hover {
+  background: var(--glass-medium);
+  border-color: var(--glass-strong);
 }
 
 .button--success {
-  background: linear-gradient(120deg, #16a34a, #22c55e);
-  color: var(--bg-dark);
-  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.28);
+  background: linear-gradient(120deg, var(--accent-green), color-mix(in srgb, var(--accent-green) 80%, white));
+  color: #ffffff;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent-green) 28%, transparent);
+  transition: transform var(--motion-base) var(--easing-out), box-shadow var(--motion-base) var(--easing-out), background 0.3s ease, color 0.3s ease;
+}
+
+[data-theme='light'] .button--success {
+  /* Ensure white text on light theme success buttons maintains contrast */
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover,
