@@ -36,7 +36,23 @@
 
   --accent-purple: #8b5cf6;
   --accent-pink: #ec4899;
+  --accent-green: #22c55e;
+  /* Green 500 - Success states */
+  --accent-red: #ef4444;
+  /* Red 500 - Error/warning states */
+  --accent-amber: #f59e0b;
+  /* Amber 500 - Awards */
+  --accent-blue: #3b82f6;
+  /* Blue 500 - Publications */
   --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-copper));
+
+  /* Navigation Colors */
+  --nav-bg: rgba(15, 15, 18, 0.85);
+  --nav-bg-hover: rgba(15, 15, 18, 0.9);
+  --nav-bg-scrolled: rgba(15, 15, 18, 0.3);
+  --nav-border: rgba(255, 255, 255, 0.12);
+  --nav-border-scrolled: rgba(255, 255, 255, 0.04);
+  --nav-text: var(--text-secondary);
 
   /* Text & Typography - High Contrast "Pop" */
   --text-primary: #ffffff;
@@ -94,14 +110,42 @@
   --glass-strong: rgba(0, 0, 0, 0.1);
   --glass-border: rgba(0, 0, 0, 0.08);
 
-  /* Text & Typography - Dark text on light background */
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-tertiary: #6a6a6a;
+  /* Text & Typography - Dark text on light background with better contrast */
+  --text-primary: #0a0a0a;
+  /* Almost black for maximum contrast */
+  --text-secondary: #404040;
+  /* Darker gray for better readability */
+  --text-tertiary: #606060;
+  /* Medium gray for secondary text */
+
+  /* Accent colors adjusted for light theme visibility */
+  --accent-cyan: #0891b2;
+  /* Cyan 600 - darker for better contrast on light bg */
+  --accent-green: #16a34a;
+  /* Green 600 - darker for light theme */
+  --accent-red: #dc2626;
+  /* Red 600 - darker for light theme */
+
+  /* Navigation Colors for Light Theme */
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg-hover: rgba(255, 255, 255, 0.95);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.4);
+  --nav-border: rgba(0, 0, 0, 0.1);
+  --nav-border-scrolled: rgba(0, 0, 0, 0.05);
+  --nav-text: var(--text-secondary);
 
   /* Shadows - Lighter shadows for light theme */
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.12);
   --shadow-glow: 0 0 100px rgba(124, 58, 237, 0.08);
   --shadow-glow-cyan: 0 0 50px rgba(217, 70, 239, 0.1);
+}
+
+/* Theme Transitions */
+:root {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
