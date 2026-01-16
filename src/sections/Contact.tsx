@@ -173,7 +173,7 @@ function Contact() {
               <div
                 style={{
                   padding: '12px 16px',
-                  background: 'rgba(239, 68, 68, 0.1)',
+                  background: 'color-mix(in srgb, var(--accent-red) 10%, transparent)',
                   border: '1px solid var(--accent-red)',
                   borderRadius: '8px',
                   color: 'var(--accent-red)',
@@ -188,7 +188,7 @@ function Contact() {
               <div
                 style={{
                   padding: '12px 16px',
-                  background: 'rgba(34, 197, 94, 0.1)',
+                  background: 'color-mix(in srgb, var(--accent-green) 10%, transparent)',
                   border: '1px solid var(--accent-green)',
                   borderRadius: '8px',
                   color: 'var(--accent-green)',
