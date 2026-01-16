@@ -178,7 +178,14 @@ function Projects() {
                     boxShadow: 'var(--shadow-medium)'
                   }}
                 >
-                  <img src={project.imageUrl} alt={project.title} style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.4s ease' }} className="project-img-hover" />
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.4s ease' }}
+                    className="project-img-hover"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </a>
               </div>
               <div className="project__content" style={{ textAlign: isEven ? 'left' : 'right' }}>
