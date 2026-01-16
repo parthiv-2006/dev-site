@@ -10,8 +10,11 @@ import Achievements from './sections/Achievements';
 import Education from './sections/Education';
 import Contact from './sections/Contact';
 import ThemePlayground from './components/ThemePlayground';
+import ThemeToggle from './components/ThemeToggle';
+import SocialShare from './components/SocialShare';
 import useMagnetCursor from './hooks/useMagnetCursor';
 import useScrollStagger from './hooks/useScrollStagger';
+import { trackPageView } from './utils/analytics';
 import './styles/app.css';
 import './styles/stat-counter.css';
 import './styles/project-card.css';
@@ -32,6 +35,11 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Track page view on mount
+  useEffect(() => {
+    trackPageView(window.location.pathname);
+  }, []);
+
   return (
     <div className="page">
       <a className="skip-link" href="#main-content">
@@ -39,14 +47,17 @@ function App() {
       </a>
 
       <nav className={`nav-dock ${isScrolled ? 'nav-dock--scrolled' : ''}`} aria-label="Primary">
-        <a className="nav-dock__item" href="#top">Home</a>
-        <a className="nav-dock__item" href="#about">About</a>
-        <a className="nav-dock__item" href="#skills">Skills</a>
-        <a className="nav-dock__item" href="#projects">Work</a>
-        <a className="nav-dock__item" href="#experience">Experience</a>
-        <a className="nav-dock__item" href="#education">Education</a>
-        <a className="nav-dock__item" href="#achievements">Achievements</a>
-        <a className="nav-dock__item" href="#contact">Contact</a>
+        <a className="nav-dock__item" href="#top" aria-label="Go to top">Home</a>
+        <a className="nav-dock__item" href="#about" aria-label="Go to about section">About</a>
+        <a className="nav-dock__item" href="#skills" aria-label="Go to skills section">Skills</a>
+        <a className="nav-dock__item" href="#projects" aria-label="Go to projects section">Work</a>
+        <a className="nav-dock__item" href="#experience" aria-label="Go to experience section">Experience</a>
+        <a className="nav-dock__item" href="#education" aria-label="Go to education section">Education</a>
+        <a className="nav-dock__item" href="#achievements" aria-label="Go to achievements section">Achievements</a>
+        <a className="nav-dock__item" href="#contact" aria-label="Go to contact section">Contact</a>
+        <div style={{ marginLeft: '8px', display: 'flex', alignItems: 'center' }}>
+          <ThemeToggle />
+        </div>
       </nav>
 
       <main id="main-content">
@@ -61,10 +72,13 @@ function App() {
       </main>
 
       <footer className="footer">
-        <span>Portfolio concept · Dummy data</span>
-        <a className="nav__link" href="#top">
-          Back to top ↑
-        </a>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }}>
+          <span>Portfolio concept · Dummy data</span>
+          <SocialShare />
+          <a className="nav__link" href="#top" aria-label="Back to top">
+            Back to top ↑
+          </a>
+        </div>
       </footer>
 
       {/* Live Theme Playground */}
