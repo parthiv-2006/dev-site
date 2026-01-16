@@ -5,6 +5,8 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
+import Experience from './sections/Experience';
+import Achievements from './sections/Achievements';
 import Education from './sections/Education';
 import Contact from './sections/Contact';
 import ThemePlayground from './components/ThemePlayground';
@@ -41,7 +43,9 @@ function App() {
         <a className="nav-dock__item" href="#about">About</a>
         <a className="nav-dock__item" href="#skills">Skills</a>
         <a className="nav-dock__item" href="#projects">Work</a>
+        <a className="nav-dock__item" href="#experience">Experience</a>
         <a className="nav-dock__item" href="#education">Education</a>
+        <a className="nav-dock__item" href="#achievements">Achievements</a>
         <a className="nav-dock__item" href="#contact">Contact</a>
       </nav>
 
@@ -50,7 +54,9 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <Experience />
         <Education />
+        <Achievements />
         <Contact />
       </main>
 

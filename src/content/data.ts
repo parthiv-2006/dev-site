@@ -18,6 +18,28 @@ export type Education = {
   activities?: string[];
 };
 
+export type Experience = {
+  company: string;
+  role: string;
+  location: string;
+  startDate: string;
+  endDate: string | 'Present';
+  type: 'internship' | 'part-time' | 'research' | 'volunteer' | 'leadership' | 'other';
+  description: string[];
+  tech?: string[];
+  companyUrl?: string;
+};
+
+export type Achievement = {
+  title: string;
+  category: 'award' | 'certification' | 'hackathon' | 'honor' | 'publication' | 'other';
+  date: string;
+  issuer?: string;
+  description: string;
+  link?: string;
+  icon?: string;
+};
+
 export type SkillCategory = {
   category: string;
   items: string[];
@@ -140,7 +162,7 @@ export const projects: Project[] = [
 ];
 
 export const contact = {
-  note: 'Currently seeking software engineering internships for Summer 2025. I love talking about full-stack development and solving complex problems.',
+  note: 'Currently seeking software engineering internships for Summer 2026. I love talking about full-stack development and solving complex problems.',
   email: 'parthiv@example.com',
   socials: [
     { label: 'LinkedIn', url: '#' },
@@ -154,4 +176,83 @@ export const quotes = [
   { text: 'Make it work, make it right, make it fast.', author: 'Kent Beck' },
   { text: 'The only way to go fast, is to go well.', author: 'Robert C. Martin' },
   { text: 'Ship early, learn fast.', author: 'Unknown' },
+];
+
+export const experience: Experience[] = [
+  {
+    company: 'Tech Startup Inc.',
+    role: 'Software Engineering Intern',
+    location: 'Toronto, ON',
+    startDate: '2024-05',
+    endDate: '2024-08',
+    type: 'internship',
+    description: [
+      'Developed and maintained full-stack features using React, Node.js, and PostgreSQL',
+      'Collaborated with senior engineers to improve application performance by 30%',
+      'Participated in code reviews and agile sprint planning meetings',
+    ],
+    tech: ['React', 'Node.js', 'PostgreSQL', 'TypeScript', 'Git'],
+    companyUrl: '#',
+  },
+  {
+    company: 'University Research Lab',
+    role: 'Undergraduate Research Assistant',
+    location: 'Toronto, ON',
+    startDate: '2024-09',
+    endDate: 'Present',
+    type: 'research',
+    description: [
+      'Assisting with machine learning research project on computer vision',
+      'Implementing data preprocessing pipelines using Python and NumPy',
+      'Collaborating on paper submissions and presentations',
+    ],
+    tech: ['Python', 'NumPy', 'TensorFlow', 'Git'],
+  },
+  {
+    company: 'CS Club',
+    role: 'Technical Lead',
+    location: 'Toronto, ON',
+    startDate: '2024-01',
+    endDate: 'Present',
+    type: 'leadership',
+    description: [
+      'Organizing weekly technical workshops and hackathons',
+      'Mentoring first-year students in programming fundamentals',
+      'Leading project development initiatives for club members',
+    ],
+    tech: ['JavaScript', 'React', 'Node.js'],
+  },
+];
+
+export const achievements: Achievement[] = [
+  {
+    title: 'Dean\'s List',
+    category: 'honor',
+    date: '2024-12',
+    issuer: 'University of Technology',
+    description: 'Achieved a GPA of 3.9+ for consecutive semesters',
+  },
+  {
+    title: 'AWS Certified Cloud Practitioner',
+    category: 'certification',
+    date: '2024-10',
+    issuer: 'Amazon Web Services',
+    description: 'Demonstrated foundational knowledge of AWS cloud platform and services',
+    link: '#',
+  },
+  {
+    title: 'Hackathon Winner',
+    category: 'hackathon',
+    date: '2024-11',
+    issuer: 'University Tech Fest',
+    description: 'First place in 48-hour hackathon building a real-time collaboration tool',
+    link: '#',
+  },
+  {
+    title: 'Best Technical Project Award',
+    category: 'award',
+    date: '2024-06',
+    issuer: 'Computer Science Department',
+    description: 'Recognized for outstanding contribution to open-source project',
+  },
 ];
