@@ -441,7 +441,7 @@
   margin-top: 6px;
   border-radius: 50%;
   background: var(--accent-copper);
-  box-shadow: 0 0 0 6px rgba(217, 119, 6, 0.2);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent-copper) 20%, transparent);
 }
 
 /* Hero Responsive */

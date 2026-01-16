@@ -1,40 +1,50 @@
 :root {
-  /* Refined Dark Palette - Softer & Easier on the Eyes */
-  --bg-dark: #0f0f12;
-  --bg-darker: #0a0a0d;
-  --surface-dark: #16161a;
-  --surface-darker: #121215;
+  /* Refined Dark Palette - Deep, Premium & High Contrast */
+  --bg-dark: #020204;
+  --bg-darker: #000000;
+  --surface-dark: #0a0a0c;
+  --surface-darker: #050505;
 
-  /* Glass/Transparency - Improved visibility */
-  --glass-light: rgba(255, 255, 255, 0.06);
-  --glass-medium: rgba(255, 255, 255, 0.09);
-  --glass-strong: rgba(255, 255, 255, 0.14);
-  --glass-border: rgba(255, 255, 255, 0.12);
+  /* Glass/Transparency - Adjusted for darker backgrounds */
+  --glass-light: rgba(255, 255, 255, 0.03);
+  --glass-medium: rgba(255, 255, 255, 0.06);
+  --glass-strong: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.08);
 
-  /* Theme Defaults - Soothing Teal Accent */
-  --theme-accent: #2dd4bf;
-  --theme-accent-light: #5eead4;
+  /* Theme Defaults - Electric Violet / Indigo */
+  --theme-accent: #7c3aed;
+  /* Violet 600 */
+  --theme-accent-light: #a78bfa;
+  /* Violet 400 */
   --theme-radius: 16px;
   --theme-font-size-base: 16px;
 
   /* Dynamic Theme Accents */
-  --accent-primary: var(--theme-accent, #2dd4bf);
-  --accent-primary-light: var(--theme-accent-light, #5eead4);
+  --accent-primary: var(--theme-accent);
+  --accent-primary-light: var(--theme-accent-light);
 
-  /* Mapped Accents - ensuring controls update all colors */
-  --accent-cyan: var(--accent-primary);
-  --accent-cyan-dim: color-mix(in srgb, var(--accent-primary), black 25%);
-  --accent-copper: #fbbf24;
-  --accent-copper-light: #fcd34d;
+  /* Mapped Accents */
+  --accent-cyan: #38bdf8;
+  /* Sky 400 - Keeping a blue tone available */
+  --accent-cyan-dim: color-mix(in srgb, var(--accent-cyan), black 25%);
 
-  --accent-purple: #a78bfa;
-  --accent-pink: #f9a8d4;
-  --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-purple));
+  /* Replacing Orange/Copper with Electric Fuchsia for better pop */
+  --accent-copper: #d946ef;
+  /* Fuchsia 500 */
+  --accent-copper-light: #f0abfc;
+  /* Fuchsia 300 */
 
-  /* Text & Typography - Higher Contrast */
-  --text-primary: #fafafa;
-  --text-secondary: #b4b4bb;
-  --text-tertiary: #6b6b77;
+  --accent-purple: #8b5cf6;
+  --accent-pink: #ec4899;
+  --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-copper));
+
+  /* Text & Typography - High Contrast "Pop" */
+  --text-primary: #ffffff;
+  /* Pure White */
+  --text-secondary: #e4e4e7;
+  /* Zinc 200 - Bright Gray */
+  --text-tertiary: #a1a1aa;
+  /* Zinc 400 */
 
   /* Base Font Size controlled by Theme */
   font-size: var(--theme-font-size-base, 16px);
@@ -62,9 +72,11 @@
   --motion-slow: 0.8s;
   --easing-out: cubic-bezier(0.215, 0.61, 0.355, 1);
 
-  /* Shadows - Refined for better depth */
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
-  --shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.35);
-  --shadow-glow: 0 0 100px rgba(45, 212, 191, 0.08);
-  --shadow-glow-cyan: 0 0 50px rgba(45, 212, 191, 0.12);
+  /* Shadows - Colored glow matching accent */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 100px rgba(124, 58, 237, 0.12);
+  /* Violet Glow */
+  --shadow-glow-cyan: 0 0 50px rgba(217, 70, 239, 0.15);
+  /* Fuchsia Glow */
 }

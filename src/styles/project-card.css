@@ -20,7 +20,7 @@
   left: var(--mouse-x, 0);
   width: 100px;
   height: 100px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.2), transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--theme-accent) 20%, transparent), transparent 70%);
   pointer-events: none;
   opacity: 0;
   transition: opacity var(--motion-fast) var(--easing-out);

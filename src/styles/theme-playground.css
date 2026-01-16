@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-medium), var(--shadow-glow-copper);
+  box-shadow: var(--shadow-medium), var(--shadow-glow);
   transition: all var(--motion-base) var(--easing-in-out);
 }
 
@@ -250,6 +250,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
