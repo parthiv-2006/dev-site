@@ -27,6 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
   position: relative;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
@@ -47,9 +48,15 @@ body::before {
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: overlay;
+  opacity: 0.06;
   /* Radial vignette: clear center, grain intensifies at edges */
   mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 20%, black 100%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 20%, black 100%);
+  transition: opacity 0.3s ease;
+}
+
+[data-theme='light'] body::before {
+  opacity: 0.03;
 }
 
 main {
@@ -124,4 +131,30 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Input placeholder styling */
+::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+/* Input focus states */
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+  border-color: var(--accent-cyan);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
 }
