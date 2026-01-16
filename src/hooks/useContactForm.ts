@@ -1,4 +1,5 @@
 import { useState, FormEvent } from 'react';
+import { trackContactForm } from '../utils/analytics';
 
 interface FormData {
   name: string;
@@ -117,6 +118,9 @@ export default function useContactForm() {
         error: null,
       });
 
+      // Track successful form submission
+      trackContactForm(true);
+
       // Reset success message after 5 seconds
       setTimeout(() => {
         setFormState((prev) => ({ ...prev, success: false }));
@@ -128,6 +132,9 @@ export default function useContactForm() {
         success: false,
         error: 'Failed to send message. Please try again or contact me directly via email.',
       }));
+      
+      // Track failed form submission
+      trackContactForm(false);
     }
   };
 
