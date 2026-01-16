@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { skills } from '../content/data';
 import SkillChip from '../components/SkillChip';
+import GitHubContributions from '../components/GitHubContributions';
 
 function Skills() {
     const allSkills = skills.flatMap(s => s.items);
@@ -40,6 +41,11 @@ function Skills() {
                         </div>
                     </div>
                 ))}
+                
+                {/* GitHub Contributions Widget */}
+                <div style={{ gridColumn: '1 / -1' }}>
+                    <GitHubContributions />
+                </div>
             </div>
         </section>
     );
