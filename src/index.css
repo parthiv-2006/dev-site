@@ -7,7 +7,11 @@
 @import './styles/interactions.css';
 
 :root {
-  color-scheme: dark;
+  color-scheme: dark light;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
 }
 
 * {
@@ -28,6 +32,11 @@ body {
 ::selection {
   background-color: var(--accent-cyan);
   color: var(--bg-dark);
+}
+
+[data-theme='light'] ::selection {
+  background-color: var(--accent-cyan);
+  color: var(--text-primary);
 }
 
 body::before {
