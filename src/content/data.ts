@@ -96,6 +96,7 @@ export const about = {
     'Detail-oriented: Writing clean, maintainable, and documented code.',
     'Collaborative: Experienced in agile workflows and team projects.',
   ],
+  profilePicture: '/profile-picture.jpg', // Add your profile picture to public folder
 };
 
 export const education: Education[] = [
