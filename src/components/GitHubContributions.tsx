@@ -138,7 +138,7 @@ function GitHubContributions() {
       {/* GitHub Contributions Graph Embed */}
       <div style={{ marginTop: '16px', textAlign: 'center' }}>
         <img
-          src={`https://ghchart.rshah.org/${now.github.username}`}
+          src={`https://ghchart.rshah.org/${now.github.username}?year=${new Date().getFullYear()}`}
           alt={`GitHub contributions chart for ${now.github.username}`}
           style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
         />
