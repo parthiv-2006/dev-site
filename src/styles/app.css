@@ -1,10 +1,10 @@
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: clamp(32px, 4vw, 56px);
+  padding: var(--page-padding);
   display: flex;
   flex-direction: column;
-  gap: clamp(64px, 8vw, 120px);
+  gap: var(--page-gap);
 }
 
 .nav-dock {

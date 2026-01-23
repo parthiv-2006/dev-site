@@ -75,6 +75,28 @@
   /* Spacing & Layout */
   --max-width: 1200px;
 
+  /* Breakpoints */
+  --bp-xs: 320px;
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* Spacing Scale */
+  --space-1: clamp(4px, 0.5vw, 8px);
+  --space-2: clamp(8px, 1vw, 12px);
+  --space-3: clamp(12px, 1.5vw, 16px);
+  --space-4: clamp(16px, 2vw, 24px);
+  --space-5: clamp(20px, 2.5vw, 32px);
+  --space-6: clamp(24px, 3vw, 40px);
+  --space-7: clamp(32px, 4vw, 56px);
+  --space-8: clamp(40px, 5vw, 72px);
+  --space-9: clamp(56px, 6vw, 96px);
+
+  /* Layout Defaults */
+  --page-padding: clamp(24px, 4vw, 56px);
+  --page-gap: clamp(56px, 7vw, 120px);
+
   /* Dynamic Radius */
   --radius-base: var(--theme-radius, 16px);
   --radius-sm: calc(var(--radius-base) * 0.5);
