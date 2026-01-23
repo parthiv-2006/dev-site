@@ -77,56 +77,48 @@ export const now = {
 };
 
 export const hero = {
-  badge: 'CS Student + Full-stack Dev',
-  title: 'Crafting software with purpose and precision.',
+  badge: 'CS Co-op Student + Full-stack Dev',
+  title: 'Building thoughtful software with measurable impact.',
   lede:
-    'Second-year Computer Science student passionate about building scalable web applications. I combine academic foundations with hands-on development to solve real-world problems.',
+    'Computer Science student at the University of Toronto (St. George) focused on AI automation, data-driven systems, and responsive web experiences.',
   stats: [
-    { label: 'GPA', value: '3.9', note: 'Cumulative' }, // Placeholder
-    { label: 'Projects', value: '12+', note: 'Completed' },
+    { label: 'CGPA', value: '3.70', note: 'Current' },
+    { label: 'Roles', value: '4', note: 'Industry + Org' },
   ],
 };
 
 export const about = {
   story:
-    'I believe the best software is built at the intersection of robust engineering and intuitive design. As a student, I am constantly learning and applying new technologies to build tools that matter.',
+    'I build products at the intersection of intelligent automation and user-centered design, focusing on systems that reduce friction and improve decision quality.',
   highlights: [
-    'Full-stack ready: Comfortably traversing the stack from DB to UI.',
-    'Quick learner: Adapting to new frameworks and languages rapidly.',
-    'Detail-oriented: Writing clean, maintainable, and documented code.',
-    'Collaborative: Experienced in agile workflows and team projects.',
+    'AI automation: Built NLP + CV pipelines and RAG systems for document workflows.',
+    'Data-driven: Developed LSTM forecasting and financial analytics tooling.',
+    'Quality-minded: Led QA efforts to catch critical defects and UX issues.',
+    'Frontend craft: Shipped responsive React experiences with accessibility in mind.',
   ],
   profilePicture: '/profile-picture.jpg', // Add your profile picture to public folder
 };
 
 export const education: Education[] = [
   {
-    school: 'University of Technology', // Placeholder
-    degree: 'B.Sc. Computer Science',
-    year: 'Expected 2027',
-    coursework: [
-      'Data Structures & Algorithms',
-      'Object-Oriented Programming',
-      'Database Systems',
-      'Web Development',
-      'Linear Algebra',
-    ],
-    activities: ['CS Club Member', 'Hackathon Participant'],
+    school: 'University of Toronto St. George',
+    degree: 'Bachelor of Computer Science, Co-op Program (CGPA: 3.70/4.00)',
+    year: 'Sept 2024 – Apr 2028',
   },
 ];
 
 export const skills: SkillCategory[] = [
   {
     category: 'Languages',
-    items: ['makeTypeScript', 'JavaScript', 'Python', 'Java', 'SQL', 'HTML/CSS'],
+    items: ['Python', 'Java', 'JavaScript (ES6+)', 'SQL', 'HTML5', 'CSS'],
   },
   {
     category: 'Frameworks & Libs',
-    items: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind', 'Framer Motion'],
+    items: ['React', 'Node.js', 'Express.js', 'MongoDB', 'TailwindCSS', 'TensorFlow', 'Pandas'],
   },
   {
     category: 'Tools & DevOps',
-    items: ['Git', 'Docker', 'PostgreSQL', 'Figma', 'Vercel', 'VS Code'],
+    items: ['Git', 'GitHub', 'VS Code', 'Maven', 'Postman', 'Linux', 'REST', 'Agile', 'CI/CD', 'WCAG'],
   },
 ];
 
@@ -163,10 +155,10 @@ export const projects: Project[] = [
 ];
 
 export const contact = {
-  note: 'Currently seeking software engineering internships for Summer 2026. I love talking about full-stack development and solving complex problems.',
-  email: 'parthiv@example.com',
+  note: 'Currently open to software engineering and AI automation opportunities. Happy to connect about full-stack systems, data-driven products, and UX.',
+  email: 'parthiv.paul@mail.utoronto.ca',
   socials: [
-    { label: 'LinkedIn', url: '#' },
+    { label: 'LinkedIn', url: 'https://linkedin.com/in/parthiv-paul' },
     { label: 'GitHub', url: 'https://github.com/parthiv-2006' },
   ],
 };
@@ -181,79 +173,72 @@ export const quotes = [
 
 export const experience: Experience[] = [
   {
-    company: 'Tech Startup Inc.',
-    role: 'Software Engineering Intern',
-    location: 'Toronto, ON',
-    startDate: '2024-05',
-    endDate: '2024-08',
+    company: 'Outamation',
+    role: 'AI and Automation Extern',
+    location: 'Remote',
+    startDate: '2025-05',
+    endDate: '2025-08',
     type: 'internship',
     description: [
-      'Developed and maintained full-stack features using React, Node.js, and PostgreSQL',
-      'Collaborated with senior engineers to improve application performance by 30%',
-      'Participated in code reviews and agile sprint planning meetings',
+      'Engineered AI-powered workflows for high-volume document classification using NLP and Computer Vision pipelines (PyMuPDF, OCR), significantly reducing manual data entry time.',
+      'Optimized a Retrieval-Augmented Generation (RAG) system with LlamaIndex, increasing document query accuracy by 25% against internal benchmarks.',
     ],
-    tech: ['React', 'Node.js', 'PostgreSQL', 'TypeScript', 'Git'],
-    companyUrl: '#',
+    tech: ['Python', 'NLP', 'Computer Vision', 'PyMuPDF', 'OCR', 'LlamaIndex'],
   },
   {
-    company: 'University Research Lab',
-    role: 'Undergraduate Research Assistant',
+    company: 'Vertige Investment Group',
+    role: 'Quantitative Analyst (Student Organization)',
     location: 'Toronto, ON',
     startDate: '2024-09',
-    endDate: 'Present',
-    type: 'research',
+    endDate: '2025-01',
+    type: 'part-time',
     description: [
-      'Assisting with machine learning research project on computer vision',
-      'Implementing data preprocessing pipelines using Python and NumPy',
-      'Collaborating on paper submissions and presentations',
+      'Architected a stock forecasting model using TensorFlow (LSTM networks) for time-series data, achieving 80% prediction accuracy on historical validation sets.',
+      'Conducted quantitative analysis of financial statements and market volatility indicators to automate data-driven investment reporting.',
     ],
-    tech: ['Python', 'NumPy', 'TensorFlow', 'Git'],
+    tech: ['Python', 'TensorFlow', 'LSTM', 'Time Series'],
   },
   {
-    company: 'CS Club',
-    role: 'Technical Lead',
-    location: 'Toronto, ON',
-    startDate: '2024-01',
-    endDate: 'Present',
-    type: 'leadership',
+    company: 'Chester-Hill Solutions',
+    role: 'Software QA Tester',
+    location: 'Remote',
+    startDate: '2024-06',
+    endDate: '2024-11',
+    type: 'part-time',
     description: [
-      'Organizing weekly technical workshops and hackathons',
-      'Mentoring first-year students in programming fundamentals',
-      'Leading project development initiatives for club members',
+      'Executed comprehensive manual and automated testing suites, identifying and documenting 50+ critical software defects and UX inconsistencies.',
+      'Partnered with engineering to debug API endpoints and UI components, reducing post-release hotfixes by 15%.',
     ],
-    tech: ['JavaScript', 'React', 'Node.js'],
+    tech: ['QA', 'Testing', 'APIs', 'UI'],
+  },
+  {
+    company: 'Ontario Liberal Party',
+    role: 'Frontend Developer',
+    location: 'Toronto, ON',
+    startDate: '2023-05',
+    endDate: '2023-09',
+    type: 'part-time',
+    description: [
+      'Developed and maintained responsive frontend interfaces serving 1,000+ monthly users using React and Redux to ensure dynamic and accessible experiences.',
+      'Overhauled mobile responsiveness with Sass and WCAG-aligned accessibility improvements, increasing mobile engagement metrics by 30%.',
+    ],
+    tech: ['React', 'Redux', 'Sass', 'WCAG'],
   },
 ];
 
 export const achievements: Achievement[] = [
   {
-    title: 'Dean\'s List',
-    category: 'honor',
-    date: '2024-12',
-    issuer: 'University of Technology',
-    description: 'Achieved a GPA of 3.9+ for consecutive semesters',
-  },
-  {
-    title: 'AWS Certified Cloud Practitioner',
-    category: 'certification',
-    date: '2024-10',
-    issuer: 'Amazon Web Services',
-    description: 'Demonstrated foundational knowledge of AWS cloud platform and services',
-    link: '#',
-  },
-  {
-    title: 'Hackathon Winner',
-    category: 'hackathon',
-    date: '2024-11',
-    issuer: 'University Tech Fest',
-    description: 'First place in 48-hour hackathon building a real-time collaboration tool',
-    link: '#',
-  },
-  {
-    title: 'Best Technical Project Award',
+    title: 'J.S. Mclean Scholarship (UofT)',
     category: 'award',
-    date: '2024-06',
-    issuer: 'Computer Science Department',
-    description: 'Recognized for outstanding contribution to open-source project',
+    date: '2023-01',
+    issuer: 'University of Toronto',
+    description: 'Awarded for academic excellence and leadership potential.',
+  },
+  {
+    title: '2nd Place — National Waterloo SAF Financial Literacy Competition',
+    category: 'award',
+    date: '2023-01',
+    issuer: 'Waterloo SAF',
+    description: 'Recognized nationally for financial analysis and investment strategy.',
   },
 ];

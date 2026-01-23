@@ -8,18 +8,18 @@ function Skills() {
 
     return (
         <section id="skills" className="section section--full-width">
-            <div className="skills__heading">
-                <h2 className="section__title skills__title">Technical Arsenal</h2>
+            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <h2 className="section__title" style={{ fontSize: '2rem' }}>Technical Arsenal</h2>
             </div>
 
-            <div className="skills__marquee">
+            <div style={{ position: 'relative', display: 'flex', overflow: 'hidden', maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
                 <motion.div
-                    className="skills__marquee-track"
+                    style={{ display: 'flex', gap: '40px', padding: '0 20px', whiteSpace: 'nowrap' }}
                     animate={{ x: [0, -1000] }}
                     transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
                 >
                     {[...allSkills, ...allSkills, ...allSkills, ...allSkills].map((item, i) => (
-                        <span key={`${item}-${i}`} className="skills__marquee-item">
+                        <span key={`${item}-${i}`} style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--text-secondary)', opacity: 0.5 }}>
                             {item}
                         </span>
                     ))}
@@ -30,10 +30,11 @@ function Skills() {
                 {skills.map(group => (
                     <div
                         key={group.category}
-                        className="card card--interactive skills__card"
+                        className="card card--interactive"
+                        style={{ padding: '24px' }}
                     >
-                        <h3 className="skills__category">{group.category}</h3>
-                        <div className="skills__chips">
+                        <h3 style={{ color: 'var(--accent-cyan)', marginBottom: '16px', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{group.category}</h3>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                             {group.items.map(item => (
                                 <SkillChip key={item} skill={item} />
                             ))}
@@ -42,7 +43,7 @@ function Skills() {
                 ))}
                 
                 {/* GitHub Contributions Widget */}
-                <div className="skills__contrib">
+                <div style={{ gridColumn: '1 / -1' }}>
                     <GitHubContributions />
                 </div>
             </div>
