@@ -12,10 +12,10 @@ function Contact() {
     <Section id="contact" eyebrow="Contact" title="Let's talk shop" className="reveal">
       <div className="section__grid section__grid--two">
         <div className="card card--soft">
-          <p style={{ marginBottom: '24px', lineHeight: '1.6', color: 'var(--text-secondary)' }}>
+          <p className="contact__note">
             {contact.note}
           </p>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
+          <div className="contact__actions">
             <CopyEmailButton />
             {contact.socials.map((item) => (
               <ActionButton
@@ -35,19 +35,13 @@ function Contact() {
           viewport={{ once: true }}
           className="card card--soft"
         >
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <form onSubmit={handleSubmit} className="contact__form">
             <div>
               <label
                 htmlFor="contact-name"
-                style={{
-                  display: 'block',
-                  fontSize: '0.9rem',
-                  color: 'var(--text-secondary)',
-                  marginBottom: '6px',
-                  fontWeight: '500',
-                }}
+                className="contact__label"
               >
-                Name <span style={{ color: 'var(--accent-red)' }}>*</span>
+                Name <span className="contact__required">*</span>
               </label>
               <input
                 id="contact-name"
@@ -56,31 +50,16 @@ function Contact() {
                 onChange={(e) => updateField('name', e.target.value)}
                 required
                 disabled={loading}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  fontSize: '1rem',
-                  background: 'var(--glass-light)',
-                  border: '1px solid var(--glass-border)',
-                  borderRadius: '8px',
-                  color: 'var(--text-primary)',
-                  fontFamily: 'inherit',
-                }}
+                className="contact__field"
               />
             </div>
 
             <div>
               <label
                 htmlFor="contact-email"
-                style={{
-                  display: 'block',
-                  fontSize: '0.9rem',
-                  color: 'var(--text-secondary)',
-                  marginBottom: '6px',
-                  fontWeight: '500',
-                }}
+                className="contact__label"
               >
-                Email <span style={{ color: 'var(--accent-red)' }}>*</span>
+                Email <span className="contact__required">*</span>
               </label>
               <input
                 id="contact-email"
@@ -89,31 +68,16 @@ function Contact() {
                 onChange={(e) => updateField('email', e.target.value)}
                 required
                 disabled={loading}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  fontSize: '1rem',
-                  background: 'var(--glass-light)',
-                  border: '1px solid var(--glass-border)',
-                  borderRadius: '8px',
-                  color: 'var(--text-primary)',
-                  fontFamily: 'inherit',
-                }}
+                className="contact__field"
               />
             </div>
 
             <div>
               <label
                 htmlFor="contact-subject"
-                style={{
-                  display: 'block',
-                  fontSize: '0.9rem',
-                  color: 'var(--text-secondary)',
-                  marginBottom: '6px',
-                  fontWeight: '500',
-                }}
+                className="contact__label"
               >
-                Subject <span style={{ color: 'var(--accent-red)' }}>*</span>
+                Subject <span className="contact__required">*</span>
               </label>
               <input
                 id="contact-subject"
@@ -122,31 +86,16 @@ function Contact() {
                 onChange={(e) => updateField('subject', e.target.value)}
                 required
                 disabled={loading}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  fontSize: '1rem',
-                  background: 'var(--glass-light)',
-                  border: '1px solid var(--glass-border)',
-                  borderRadius: '8px',
-                  color: 'var(--text-primary)',
-                  fontFamily: 'inherit',
-                }}
+                className="contact__field"
               />
             </div>
 
             <div>
               <label
                 htmlFor="contact-message"
-                style={{
-                  display: 'block',
-                  fontSize: '0.9rem',
-                  color: 'var(--text-secondary)',
-                  marginBottom: '6px',
-                  fontWeight: '500',
-                }}
+                className="contact__label"
               >
-                Message <span style={{ color: 'var(--accent-red)' }}>*</span>
+                Message <span className="contact__required">*</span>
               </label>
               <textarea
                 id="contact-message"
@@ -155,30 +104,13 @@ function Contact() {
                 required
                 disabled={loading}
                 rows={6}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  fontSize: '1rem',
-                  background: 'var(--glass-light)',
-                  border: '1px solid var(--glass-border)',
-                  borderRadius: '8px',
-                  color: 'var(--text-primary)',
-                  fontFamily: 'inherit',
-                  resize: 'vertical',
-                }}
+                className="contact__textarea"
               />
             </div>
 
             {error && (
               <div
-                style={{
-                  padding: '12px 16px',
-                  background: 'color-mix(in srgb, var(--accent-red) 10%, transparent)',
-                  border: '1px solid var(--accent-red)',
-                  borderRadius: '8px',
-                  color: 'var(--accent-red)',
-                  fontSize: '0.9rem',
-                }}
+                className="contact__alert contact__alert--error"
               >
                 {error}
               </div>
@@ -186,14 +118,7 @@ function Contact() {
 
             {success && (
               <div
-                style={{
-                  padding: '12px 16px',
-                  background: 'color-mix(in srgb, var(--accent-green) 10%, transparent)',
-                  border: '1px solid var(--accent-green)',
-                  borderRadius: '8px',
-                  color: 'var(--accent-green)',
-                  fontSize: '0.9rem',
-                }}
+                className="contact__alert contact__alert--success"
               >
                 Message sent successfully! I'll get back to you soon.
               </div>
@@ -202,12 +127,7 @@ function Contact() {
             <button
               type="submit"
               disabled={loading}
-              className="button button--primary"
-              style={{
-                marginTop: '8px',
-                opacity: loading ? 0.6 : 1,
-                cursor: loading ? 'not-allowed' : 'pointer',
-              }}
+              className={`button button--primary contact__submit${loading ? ' contact__submit--loading' : ''}`}
             >
               {loading ? 'Sending...' : 'Send Message'}
             </button>
