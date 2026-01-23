@@ -55,10 +55,11 @@ function App() {
         <a className="nav-dock__item" href="#education" aria-label="Go to education section">Education</a>
         <a className="nav-dock__item" href="#achievements" aria-label="Go to achievements section">Achievements</a>
         <a className="nav-dock__item" href="#contact" aria-label="Go to contact section">Contact</a>
-        <div style={{ marginLeft: '8px', display: 'flex', alignItems: 'center' }}>
-          <ThemeToggle />
-        </div>
       </nav>
+
+      <div className="theme-toggle-fab" aria-label="Theme toggle">
+        <ThemeToggle />
+      </div>
 
       <main id="main-content">
         <Hero />

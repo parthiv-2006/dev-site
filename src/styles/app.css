@@ -7,6 +7,13 @@
   gap: var(--page-gap);
 }
 
+.theme-toggle-fab {
+  position: fixed;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  z-index: 1001;
+}
+
 .nav-dock {
   position: fixed;
   bottom: 24px;
